@@ -1,0 +1,178 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  company: string;
+}
+
+const { title, company } = Astro.props;
+---
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title} | claw.education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <meta name="company-slug" content={company} />
+</head>
+<body>
+  <!-- Registration banner -->
+  <div class="registration-banner" id="registration-banner" style="display: none;">
+    <p>Zostaw swój email, żebyśmy mogli informować Cię o nowych materiałach:</p>
+    <form class="reg-form" id="reg-form">
+      <input type="text" name="name" placeholder="Imię" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <button type="submit">Zapisz</button>
+    </form>
+    <button class="dismiss-btn" id="dismiss-banner">Nie teraz</button>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="company-nav">
+    <a href={`/${company}/`} class="nav-logo">claw.education</a>
+  </nav>
+
+  <!-- Content -->
+  <main class="content">
+    <slot />
+  </main>
+
+  <script define:vars={{ company }}>
+    // Session guard
+    const slug = sessionStorage.getItem('claw_company');
+    if (!slug || slug !== company) {
+      window.location.href = '/';
+    }
+
+    // Registration banner
+    const registered = localStorage.getItem('claw_registered') === 'true';
+    const banner = document.getElementById('registration-banner');
+
+    if (!registered && banner) {
+      banner.style.display = 'flex';
+    }
+
+    // Dismiss banner
+    const dismissBtn = document.getElementById('dismiss-banner');
+    if (dismissBtn) {
+      dismissBtn.addEventListener('click', () => {
+        localStorage.setItem('claw_registered', 'true');
+        banner.style.display = 'none';
+      });
+    }
+
+    // Registration form submit
+    const regForm = document.getElementById('reg-form');
+    if (regForm) {
+      regForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const formData = new FormData(regForm);
+        const data = {
+          name: formData.get('name'),
+          email: formData.get('email'),
+          company: company,
+          timestamp: new Date().toISOString()
+        };
+
+        // POST to your form endpoint (replace URL when ready)
+        // await fetch('YOUR_FORM_ENDPOINT', {
+        //   method: 'POST',
+        //   headers: { 'Content-Type': 'application/json' },
+        //   body: JSON.stringify(data)
+        // });
+
+        console.log('Registration:', data);
+        localStorage.setItem('claw_registered', 'true');
+        banner.style.display = 'none';
+      });
+    }
+  </script>
+
+  <style>
+    .registration-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-gold-dim);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      z-index: 100;
+    }
+
+    .registration-banner p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+    }
+
+    .reg-form {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .reg-form input {
+      padding: 0.5rem 0.75rem;
+      border: 1px solid var(--color-input-border);
+      border-radius: var(--radius);
+      background: var(--color-input-bg);
+      color: var(--color-text);
+      font-size: 0.85rem;
+      font-family: var(--font-main);
+    }
+
+    .reg-form button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: var(--radius);
+      background: var(--color-gold);
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .dismiss-btn {
+      background: none;
+      border: none;
+      color: var(--color-text-muted);
+      font-size: 0.8rem;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    .company-nav {
+      width: 100%;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    body {
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  </style>
+</body>
+</html>

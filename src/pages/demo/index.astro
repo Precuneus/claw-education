@@ -1,0 +1,54 @@
+---
+import CompanyLayout from '../../layouts/CompanyLayout.astro';
+---
+
+<CompanyLayout title="Panel szkoleniowy" company="demo">
+  <h1>Witaj w panelu szkoleniowym</h1>
+  <p>To jest przykładowa strona firmy demo. Tutaj pojawią się materiały szkoleniowe.</p>
+
+  <nav class="modules">
+    <h2>Moduły</h2>
+    <ul>
+      <li><a href="/demo/modul-1/">Moduł 1: Wprowadzenie</a></li>
+    </ul>
+  </nav>
+</CompanyLayout>
+
+<style>
+  h1 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--color-gold);
+  }
+
+  p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .modules h2 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+  }
+
+  .modules ul {
+    list-style: none;
+  }
+
+  .modules li {
+    margin-bottom: 0.5rem;
+  }
+
+  .modules a {
+    color: var(--color-gold);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: inline-block;
+  }
+
+  .modules a:hover {
+    color: var(--color-gold-light);
+  }
+</style>

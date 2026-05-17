@@ -1,0 +1,140 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>claw.education</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main class="landing">
+    <h1 class="logo">claw.education</h1>
+    <form class="login-form" id="login-form">
+      <label for="password-input">Wpisz swoje hasło:</label>
+      <div class="input-group">
+        <input
+          type="password"
+          id="password-input"
+          name="password"
+          autocomplete="off"
+          autofocus
+        />
+        <button type="submit">→</button>
+      </div>
+      <p class="error-message" id="error-message" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script>
+    import { validatePassword, getCompanySlug } from '../scripts/auth.js';
+
+    // If already authenticated in this session, redirect
+    const existingSlug = getCompanySlug();
+    if (existingSlug) {
+      window.location.href = `/${existingSlug}/`;
+    }
+
+    const form = document.getElementById('login-form');
+    const input = document.getElementById('password-input');
+    const errorMsg = document.getElementById('error-message');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const password = input.value;
+      const slug = validatePassword(password);
+
+      if (slug) {
+        window.location.href = `/${slug}/`;
+      } else {
+        errorMsg.textContent = 'Nieprawidłowe hasło. Spróbuj ponownie.';
+        input.value = '';
+        input.focus();
+      }
+    });
+  </script>
+
+  <style>
+    .landing {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      gap: 3rem;
+    }
+
+    .logo {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      color: var(--color-gold);
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .login-form label {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--color-text-muted);
+    }
+
+    .input-group {
+      display: flex;
+      width: 100%;
+      border: 1px solid var(--color-input-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .input-group:focus-within {
+      border-color: var(--color-gold);
+    }
+
+    .input-group input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      border: none;
+      background: var(--color-input-bg);
+      color: var(--color-text);
+      font-size: 1rem;
+      font-family: var(--font-main);
+      outline: none;
+    }
+
+    .input-group button {
+      padding: 0.75rem 1.25rem;
+      border: none;
+      background: var(--color-gold);
+      color: #ffffff;
+      font-size: 1.1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .input-group button:hover {
+      background: var(--color-gold-light);
+    }
+
+    .error-message {
+      font-size: 0.85rem;
+      color: #cc4444;
+      min-height: 1.2em;
+    }
+  </style>
+</body>
+</html>
