@@ -16,7 +16,7 @@ const { title, company } = Astro.props;
   <title>{title} | claw.education</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
   <meta name="company-slug" content={company} />
 </head>
 <body>
@@ -33,7 +33,11 @@ const { title, company } = Astro.props;
 
   <!-- Navigation -->
   <nav class="company-nav">
-    <a href={`/${company}/`} class="nav-logo">claw.education</a>
+    <a href="/" class="nav-logo">claw.education</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz motyw">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
   </nav>
 
   <!-- Content -->
@@ -42,6 +46,28 @@ const { title, company } = Astro.props;
   </main>
 
   <script define:vars={{ company }}>
+    // Theme
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function getPreferredTheme() {
+      const stored = localStorage.getItem('claw_theme');
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('claw_theme', theme);
+    }
+
+    applyTheme(getPreferredTheme());
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
     // Session guard
     const slug = sessionStorage.getItem('claw_company');
     if (!slug || slug !== company) {
@@ -56,7 +82,6 @@ const { title, company } = Astro.props;
       banner.style.display = 'flex';
     }
 
-    // Dismiss banner
     const dismissBtn = document.getElementById('dismiss-banner');
     if (dismissBtn) {
       dismissBtn.addEventListener('click', () => {
@@ -65,7 +90,6 @@ const { title, company } = Astro.props;
       });
     }
 
-    // Registration form submit
     const regForm = document.getElementById('reg-form');
     if (regForm) {
       regForm.addEventListener('submit', async (e) => {
@@ -93,6 +117,58 @@ const { title, company } = Astro.props;
   </script>
 
   <style>
+    .company-nav {
+      width: 100%;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--color-gold);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-gold);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--color-gold);
+    }
+
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="dark"] .icon-sun { display: none; }
+
+    .content {
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    body {
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
     .registration-banner {
       position: fixed;
       bottom: 0;
@@ -126,7 +202,7 @@ const { title, company } = Astro.props;
       background: var(--color-input-bg);
       color: var(--color-text);
       font-size: 0.85rem;
-      font-family: var(--font-main);
+      font-family: var(--font-body);
     }
 
     .reg-form button {
@@ -147,31 +223,6 @@ const { title, company } = Astro.props;
       font-size: 0.8rem;
       cursor: pointer;
       text-decoration: underline;
-    }
-
-    .company-nav {
-      width: 100%;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .nav-logo {
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: var(--color-gold);
-      text-decoration: none;
-    }
-
-    .content {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    body {
-      justify-content: flex-start;
-      align-items: stretch;
     }
   </style>
 </body>

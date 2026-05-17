@@ -9,9 +9,14 @@ import '../styles/global.css';
   <title>claw.education</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz motyw">
+    <span class="icon-sun">☀</span>
+    <span class="icon-moon">☾</span>
+  </button>
+
   <main class="landing">
     <h1 class="logo">claw.education</h1>
     <form class="login-form" id="login-form">
@@ -31,9 +36,31 @@ import '../styles/global.css';
   </main>
 
   <script>
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function getPreferredTheme() {
+      const stored = localStorage.getItem('claw_theme');
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('claw_theme', theme);
+    }
+
+    applyTheme(getPreferredTheme());
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Auth
     import { validatePassword, getCompanySlug } from '../scripts/auth.js';
 
-    // If already authenticated in this session, redirect
     const existingSlug = getCompanySlug();
     if (existingSlug) {
       window.location.href = `/${existingSlug}/`;
@@ -59,6 +86,32 @@ import '../styles/global.css';
   </script>
 
   <style>
+    .theme-toggle {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.25rem;
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-gold);
+      font-size: 1.1rem;
+      transition: border-color 0.2s;
+      z-index: 10;
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--color-gold);
+    }
+
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="dark"] .icon-sun { display: none; }
+
     .landing {
       display: flex;
       flex-direction: column;
@@ -70,9 +123,10 @@ import '../styles/global.css';
     }
 
     .logo {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
       font-weight: 300;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.02em;
       color: var(--color-gold);
     }
 
@@ -82,13 +136,14 @@ import '../styles/global.css';
       align-items: center;
       gap: 0.75rem;
       width: 100%;
-      max-width: 360px;
+      max-width: 340px;
     }
 
     .login-form label {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       font-weight: 400;
       color: var(--color-text-muted);
+      letter-spacing: 0.01em;
     }
 
     .input-group {
@@ -106,17 +161,17 @@ import '../styles/global.css';
 
     .input-group input {
       flex: 1;
-      padding: 0.75rem 1rem;
+      padding: 0.7rem 1rem;
       border: none;
       background: var(--color-input-bg);
       color: var(--color-text);
-      font-size: 1rem;
-      font-family: var(--font-main);
+      font-size: 0.95rem;
+      font-family: var(--font-body);
       outline: none;
     }
 
     .input-group button {
-      padding: 0.75rem 1.25rem;
+      padding: 0.7rem 1.2rem;
       border: none;
       background: var(--color-gold);
       color: #ffffff;
@@ -131,8 +186,8 @@ import '../styles/global.css';
     }
 
     .error-message {
-      font-size: 0.85rem;
-      color: #cc4444;
+      font-size: 0.82rem;
+      color: #b84444;
       min-height: 1.2em;
     }
   </style>
