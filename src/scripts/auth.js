@@ -1,6 +1,7 @@
 // Password-to-company mapping
 const PASSWORDS = {
   'demo2024': 'demo',
+  'ambasada2026': 'ambasada',
   // Add more: 'company-password': 'company-slug'
 };
 

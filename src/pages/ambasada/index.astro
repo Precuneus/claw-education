@@ -1,0 +1,505 @@
+---
+import CompanyLayout from '../../layouts/CompanyLayout.astro';
+---
+
+<CompanyLayout title="Warsztat AI" company="ambasada">
+
+<div class="workshop-page">
+  <h1>Ambasada Nieruchomości</h1>
+  <p class="meta">warsztat AI &middot; maj 2026</p>
+
+  <!-- Tab navigator -->
+  <div class="ws-tabs">
+    <div class="ws-tab viewing" data-panel="start">
+      <button data-show="start">
+        <div class="ws-tab-dot">01</div>
+        <div class="ws-tab-label">Start</div>
+      </button>
+    </div>
+    <div class="ws-tab" data-panel="doswiadcz">
+      <button data-show="doswiadcz">
+        <div class="ws-tab-dot">02</div>
+        <div class="ws-tab-label">Doświadcz</div>
+      </button>
+    </div>
+    <div class="ws-tab" data-panel="buduj">
+      <button data-show="buduj">
+        <div class="ws-tab-dot">03</div>
+        <div class="ws-tab-label">Buduj</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ PANEL 1: START ═══════════════ -->
+<div class="ws-panel active" id="panel-start">
+<div class="workshop-page">
+
+  <span class="section-badge">Zanim zaczniemy</span>
+  <h2>AI to system, nie rozmówca</h2>
+  <div class="section-divider"></div>
+
+  <p>Pewnie używałeś ChatGPT. Wpisałeś pytanie, dostałeś odpowiedź. Czasem dobrą, czasem taką, że szybciej byłoby napisać samemu. I pewnie pomyślałeś: „no ok, ale to nie jest jeszcze na tyle dobre, żeby mi zastąpiło pracę."</p>
+
+  <p>I miałeś rację. Pojedyncza rozmowa z AI to jak rozmowa z kimś, kto jest bardzo elokwentny, ale nic o tobie nie wie. Nie wie jak piszesz ogłoszenia. Nie wie, że w Białymstoku mówi się „osiedle Bojary" a nie „dzielnica Bojary." Nie wie, że twoi klienci wolą konkret od poetyckiego opisu.</p>
+
+  <p>To co dziś zbudujemy, jest czymś innym. To <strong>system</strong>. System pamięta. System ma procedury. System się uczy z twoich poprawek. Za każdym razem kiedy poprawisz tekst, który ci napisał, zapisuje sobie: „aha, on/ona woli tak, nie tak." I następnym razem pisze bliżej twojego stylu.</p>
+
+  <p>Na koniec dnia będziesz mieć swój system. Nie ogólny. Twój. Dopasowany do tego jak ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
+
+  <span class="section-badge">Słownik</span>
+  <h2>Pojęcia, które dziś usłyszysz</h2>
+  <div class="section-divider"></div>
+
+  <div class="glossary">
+    <div class="glossary-item">
+      <span class="glossary-term">Skill</span>
+      <span class="glossary-def">Procedura, którą system wykonuje za każdym razem tak samo. Jak przepis: ma składniki (dane od ciebie), kroki (co robi) i efekt (co dostajesz). Skill do ogłoszeń pisze opisy. Skill do dokumentów wypełnia formularze. Każdy skill uczy się z twoich poprawek.</span>
+    </div>
+    <div class="glossary-item">
+      <span class="glossary-term">Pigułka (pill)</span>
+      <span class="glossary-def">Jednorazowa procedura. Wklejasz, przechodzisz, dostajesz wynik. Po użyciu znika z systemu. Dziś użyjesz kilku pigułek, żeby zbudować swoje skille.</span>
+    </div>
+    <div class="glossary-item">
+      <span class="glossary-term">Preferencje</span>
+      <span class="glossary-def">To czego system nauczył się z twoich poprawek. Kiedy poprawisz tekst, system porównuje oryginał z twoją wersją i zapisuje różnicę. Im częściej poprawiasz to samo, tym mocniejsza reguła.</span>
+    </div>
+    <div class="glossary-item">
+      <span class="glossary-term">Wagi (×1, ×2, ×3+)</span>
+      <span class="glossary-def">Siła preferencji. ×1 to tendencja (system spróbuje). ×2 to domyślne zachowanie (system robi, chyba że kontekst mówi inaczej). ×3+ to twarda reguła (system robi zawsze).</span>
+    </div>
+    <div class="glossary-item">
+      <span class="glossary-term">Delta</span>
+      <span class="glossary-def">Różnica między tym co system napisał a tym co ty poprawiłeś. System porównuje obie wersje, wyciąga wzorzec i dodaje go do preferencji. Nie musisz tłumaczyć CO zmieniłeś. Wystarczy wkleić swoją wersję.</span>
+    </div>
+    <div class="glossary-item">
+      <span class="glossary-term">Dashboard</span>
+      <span class="glossary-def">Podsumowanie stanu systemu. Co masz, co było robione ostatnio, co jest otwarte. Aktualizuje się na koniec każdej sesji.</span>
+    </div>
+  </div>
+
+  <span class="section-badge">Przygotowanie</span>
+  <h2>Konfiguracja systemu</h2>
+  <div class="section-divider"></div>
+
+  <p>Twój system to folder z plikami. Ściągnij go, otwórz Claude i podłącz folder. Prowadzący pomoże ci na miejscu.</p>
+
+  <div class="download-card">
+    <div class="download-card-label">Paczka systemowa</div>
+    <div class="download-card-title">Ambasystem</div>
+    <div class="download-card-desc">Folder z plikami systemowymi, procedurami i pigułkami. Ściągnij i rozpakuj na pulpicie.</div>
+    <a href="/ambasada/Ambasystem.zip" class="download-link" download>Pobierz Ambasystem.zip</a>
+  </div>
+
+  <p>Po rozpakowaniu otwórz Claude (aplikacja Cowork) i podłącz folder Ambasystem. System sam wczyta pliki i przygotuje się do pracy.</p>
+
+</div>
+</div>
+
+<!-- ═══════════════ PANEL 2: DOŚWIADCZ ═══════════════ -->
+<div class="ws-panel" id="panel-doswiadcz">
+<div class="workshop-page">
+
+  <span class="section-badge">Rano</span>
+  <h2>Twój głos</h2>
+  <div class="section-divider"></div>
+
+  <p>Dlaczego ChatGPT pisze „przestronne wnętrze w atrakcyjnej lokalizacji"? Nie dlatego, że jest głupi. Dlatego, że nie wie jak TY piszesz. Nie ma twojego stylu. Nie widział twoich ogłoszeń. Więc produkuje średnią ze wszystkich ogłoszeń, jakie kiedykolwiek przeczytał. A średnia jest z definicji nijaka.</p>
+
+  <p>To co zaraz zrobisz, rozwiązuje ten problem. Wkleisz swoje opisy, a system przeanalizuje jak piszesz: jakie zdania, jaka kolejność informacji, jaki rejestr, jakie zwroty lubisz. Potem napisze opis w twoim stylu. Nie w swoim, nie w ogólnym. W twoim.</p>
+
+  <p>Jeśli wynik nie będzie idealny, poprawisz go. I tu dzieje się magia: system porówna oryginał z twoją wersją i zapamięta różnicę. Następnym razem będzie bliżej. I znowu bliżej. I znowu. Po kilku poprawkach będziesz poprawiać coraz mniej, bo system coraz lepiej rozumie co masz na myśli.</p>
+
+  <span class="section-badge">Mechanizm</span>
+  <h2>Jak system się uczy</h2>
+  <div class="section-divider"></div>
+
+  <p>Mechanizm jest prosty. Dostajesz tekst od systemu. Poprawiasz po swojemu. Wklejasz swoją wersję z powrotem. System porównuje oba teksty i wyciąga wzorce.</p>
+
+  <p>Na przykład: system napisał „oferuje doskonały dostęp do komunikacji miejskiej." Ty zmieniłeś na „przystanek autobusu 3 minuty pieszo." System zapamiętuje: <em>zamień abstrakcyjny opis na konkretną odległość</em>. To jest preferencja z wagą ×1.</p>
+
+  <p>Następnym razem system pisze opis. Sprawdza preferencje. Widzi tę regułę i od razu pisze konkretem. Ty dostajesz tekst bliższy swojemu stylowi. Jeśli znowu poprawisz to samo, waga rośnie do ×2. Po kilku razach rośnie do ×3+ i staje się twardą regułą, której system nie złamie.</p>
+
+  <p>Nie musisz niczego tłumaczyć. Nie musisz pisać instrukcji. Wystarczy że poprawiasz i wklejasz. Różnica między wersją systemu a twoją wersją to jedyny sygnał, jakiego system potrzebuje.</p>
+
+  <span class="section-badge">Ćwiczenie</span>
+  <h2>Co teraz robisz</h2>
+  <div class="section-divider"></div>
+
+  <p>Prowadzący poda ci pigułkę do wklejenia. Po kolei:</p>
+
+  <div class="steps-card">
+    <ol>
+      <li>Wklej pigułkę do Claude. Spotkasz Zosię. Krótka rozmowa, system cię pozna.</li>
+      <li>Potem wklej drugą pigułkę. Spotkasz Nikę. Wklej jej 2-3 swoje opisy ogłoszeń.</li>
+      <li>Nika przeanalizuje twój styl i napisze opis w twoim głosie. Oceń od 1 do 10.</li>
+      <li>Jeśli coś nie pasuje, powiedz co. Nika poprawi i zapamięta.</li>
+      <li>Na koniec dostajesz skill. Od teraz mówisz „napisz opis" i podajesz parametry mieszkania.</li>
+    </ol>
+  </div>
+
+  <p>Miej otwarte 2-3 swoje ogłoszenia (z Otodom, Virgo, maila, skądkolwiek). Nika będzie ich potrzebować.</p>
+
+</div>
+</div>
+
+<!-- ═══════════════ PANEL 3: BUDUJ ═══════════════ -->
+<div class="ws-panel" id="panel-buduj">
+<div class="workshop-page">
+
+  <span class="section-badge">Po południu</span>
+  <h2>Dekompozycja</h2>
+  <div class="section-divider"></div>
+
+  <p>AI nie potrafi zrobić niczego, czego nie umiesz opisać. To brzmi banalnie, ale zmienia wszystko. Jeśli powiesz „napisz mi ogłoszenie," dostaniesz generyczny tekst. Jeśli powiesz „weź parametry, zacznij od hooka z cechą wyróżniającą i lokalizacją, potem rozkład pomieszczeń z metrażami, potem okolica z konkretnymi odległościami, zamknij stanem prawnym," dostaniesz coś użytecznego.</p>
+
+  <p>Dekompozycja to rozbijanie tego co robisz na atomowe kroki. Nie „piszę ogłoszenie" tylko: (1) czytam parametry, (2) wybieram hook, (3) opisuję rozkład, (4) opisuję okolicę, (5) dopisuję formalności. Każdy krok to jedna operacja. Każda operacja ma wejście i wyjście.</p>
+
+  <p>Kiedy rozkładasz swoją pracę na kroki, odkrywasz rzeczy, o których nie wiedziałeś. Na przykład: że zawsze zaczynasz od lokalizacji, a nie od metrażu. Albo że krok „opisuję okolicę" wymaga wiedzy, której nie ma w parametrach, bo znasz osiedle z głowy. Albo że jeden krok jest tak skomplikowany, że tak naprawdę to trzy kroki udające jeden.</p>
+
+  <span class="section-badge">Budowanie</span>
+  <h2>Co to jest dobry skill</h2>
+  <div class="section-divider"></div>
+
+  <p>Dobry skill ma pięć rzeczy.</p>
+
+  <p><strong>Cel.</strong> Jedno zdanie. Co skill robi i dla kogo. Jeśli nie mieści się w jednym zdaniu, to nie jest jeden skill, tylko dwa.</p>
+
+  <p><strong>Wejście.</strong> Co skill dostaje od ciebie. Konkretnie: jakie dane, w jakim formacie, co jest minimum bez którego nie zacznie. Skill który zgaduje brakujące dane to skill który zmyśla.</p>
+
+  <p><strong>Procedura.</strong> Ponumerowane kroki. Każdy krok to jedna operacja. „Przeczytaj parametry i napisz hook" to dwa kroki, nie jeden. Konkretne instrukcje, nie przymiotniki. Nie „napisz angażujący opis" tylko „zacznij od cechy wyróżniającej, dodaj lokalizację, max 10 słów."</p>
+
+  <p><strong>Anty-wzorce.</strong> Czego skill NIE robi. To ważniejsze niż procedura, bo AI ma tendencję do robienia rzeczy, o które nikt nie prosił. „Nie stackuj przymiotników," „nie dodawaj informacji których nie ma w danych," „nie używaj wykrzykników."</p>
+
+  <p><strong>Preferencje.</strong> Puste na start. Wypełniają się z twoich poprawek. To jest pamięć skilla. Im więcej poprawiasz, tym mądrzejszy.</p>
+
+  <span class="section-badge">Ćwiczenie</span>
+  <h2>Budowanie skilla z Vossem</h2>
+  <div class="section-divider"></div>
+
+  <p>Teraz budujesz swój własny skill. Nie do ogłoszeń, bo ten już masz. Do czegoś innego. Do czegoś, co robisz regularnie i co zajmuje ci czas.</p>
+
+  <p>Prowadzący poda ci pigułkę. Spotkasz Doktora Vossa. Naukowiec, trochę szalony, bardzo dokładny. Voss przeprowadzi cię przez trzy fazy:</p>
+
+  <div class="steps-card">
+    <ol>
+      <li><strong>Sekcja.</strong> Voss rozkłada twoją procedurę na części. Pyta, dopytuje, rozbija każdy krok na mniejsze. Na końcu masz mapę tego co robisz.</li>
+      <li><strong>Konstrukcja.</strong> Voss buduje skill z tych części. Doprecyzowuje, dodaje anty-wzorce, zapisuje plik. Dostajesz gotowy skill do przejrzenia.</li>
+      <li><strong>Weryfikacja.</strong> Voss testuje skill. Próbuje go złamać. Naprawia co się da. Pokazuje że działa na normalnym przypadku. Pokazuje jak się uczy z poprawek.</li>
+    </ol>
+  </div>
+
+  <p>Cały proces zajmuje ~30 minut. Na końcu masz drugi skill w swoim systemie. Możesz budować kolejne.</p>
+
+  <span class="section-badge">Dalej</span>
+  <h2>Co teraz</h2>
+  <div class="section-divider"></div>
+
+  <p>Masz system. Ma twoje skille, twoją pamięć, twoje preferencje. Każda sesja go wzmacnia. Każda poprawka go uczy. Im więcej pracujesz z systemem, tym mniej poprawiasz.</p>
+
+  <p>Kiedy zamykasz sesję (mówisz „zamykamy" albo „koniec na dziś"), system robi porządek: podsumowuje co się wydarzyło, sprawdza pliki, zbiera twoje poprawki i wpisuje je do skilli. Następna sesja zaczyna się od tego stanu.</p>
+
+  <p>Kiedy będziesz chciał nowy skill, wklej pigułkę Vossa i przejdź przez trzy fazy. Możesz to robić sam, bez warsztatu. Voss jest w twoim folderze.</p>
+
+</div>
+</div>
+
+</CompanyLayout>
+
+<script>
+  // Tab switching
+  function showPanel(id) {
+    document.querySelectorAll('.ws-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + id)?.classList.add('active');
+    document.querySelectorAll('.ws-tab').forEach(t => t.classList.remove('viewing'));
+    document.querySelector('.ws-tab[data-panel="' + id + '"]')?.classList.add('viewing');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  document.querySelectorAll('.ws-tab button[data-show]').forEach(btn => {
+    btn.addEventListener('click', () => showPanel(btn.dataset.show));
+  });
+</script>
+
+<style>
+  .workshop-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  .workshop-page h1 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--color-gold);
+    letter-spacing: 0.02em;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .meta {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 48px;
+  }
+
+  .workshop-page h2 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin: 48px 0 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .workshop-page p {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .workshop-page p strong {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .workshop-page p em {
+    color: var(--color-gold);
+    font-style: italic;
+  }
+
+  .section-badge {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    opacity: 0.7;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .section-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.3;
+    margin: 0 0 20px;
+  }
+
+  /* Tabs */
+  .ws-tabs {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    margin: 0 0 40px;
+    position: relative;
+  }
+
+  .ws-tab {
+    flex: 1;
+    text-align: center;
+    position: relative;
+  }
+
+  .ws-tab::after {
+    content: '';
+    position: absolute;
+    top: 18px;
+    right: -1px;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+    z-index: 0;
+  }
+
+  .ws-tab:last-child::after { display: none; }
+
+  .ws-tab button {
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .ws-tab-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s;
+  }
+
+  .ws-tab button:hover .ws-tab-dot {
+    border-color: var(--color-gold);
+    opacity: 1;
+  }
+
+  .ws-tab.viewing .ws-tab-dot {
+    border-color: var(--color-gold) !important;
+    color: var(--color-gold) !important;
+    background: rgba(166, 124, 55, 0.06) !important;
+    opacity: 1 !important;
+  }
+
+  .ws-tab-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  .ws-tab.viewing .ws-tab-label {
+    color: var(--color-text);
+  }
+
+  .ws-panel { display: none; }
+  .ws-panel.active { display: block; }
+
+  /* Glossary */
+  .glossary {
+    margin: 24px 0 48px;
+  }
+
+  .glossary-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .glossary-item:last-child {
+    border-bottom: none;
+  }
+
+  .glossary-term {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-gold);
+    margin-bottom: 6px;
+  }
+
+  .glossary-def {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* Download card */
+  .download-card {
+    border: 1px solid var(--color-gold-dim);
+    background: linear-gradient(135deg, rgba(166,124,55,0.04), transparent);
+    padding: 28px;
+    margin: 32px 0 32px;
+    position: relative;
+  }
+
+  .download-card::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(166,124,55,0.08);
+    pointer-events: none;
+  }
+
+  .download-card-label {
+    font-family: var(--font-body);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 10px;
+  }
+
+  .download-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+
+  .download-card-desc {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .download-link {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    text-decoration: none;
+    border: 1px solid var(--color-gold-dim);
+    padding: 8px 20px;
+    transition: all 0.3s;
+  }
+
+  .download-link:hover {
+    background: rgba(166,124,55,0.06);
+    border-color: var(--color-gold);
+  }
+
+  /* Steps card */
+  .steps-card {
+    border-left: 2px solid var(--color-gold-dim);
+    padding: 4px 0 4px 24px;
+    margin: 24px 0 32px;
+  }
+
+  .steps-card ol {
+    list-style: decimal;
+    padding-left: 16px;
+  }
+
+  .steps-card li {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+
+  .steps-card li strong {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+</style>
+
