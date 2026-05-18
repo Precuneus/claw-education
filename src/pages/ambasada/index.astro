@@ -28,6 +28,12 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
         <div class="ws-tab-label">Buduj</div>
       </button>
     </div>
+    <div class="ws-tab" data-panel="konwersacja">
+      <button data-show="konwersacja">
+        <div class="ws-tab-dot">04</div>
+        <div class="ws-tab-label">Konwersacja</div>
+      </button>
+    </div>
   </div>
 </div>
 
@@ -36,16 +42,16 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 <div class="workshop-page">
 
   <span class="section-badge">Zanim zaczniemy</span>
-  <h2>AI to system, nie rozmówca</h2>
+  <h2>AI to Ambasystem, nie rozmówca</h2>
   <div class="section-divider"></div>
 
   <p>Pewnie znasz ChatGPT. Wpisujesz pytanie, dostajesz odpowiedź. Czasem dobrą, czasem taką, że szybciej napisać samodzielnie. I pewnie myślisz: „no ok, ale to nie jest jeszcze na tyle dobre, żeby mi zastąpiło pracę."</p>
 
-  <p>I słusznie. Pojedyncza rozmowa z AI to jak rozmowa z kimś, kto jest bardzo elokwentny, ale nic o tobie nie wie. Nie wie jak piszesz ogłoszenia. Nie wie, że w Białymstoku mówi się „osiedle Bojary" a nie „dzielnica Bojary." Nie wie, że twoi klienci wolą konkret od poetyckiego opisu.</p>
+  <p>I słusznie. Pojedyncza rozmowa z AI to jak rozmowa z kimś, kto jest bardzo elokwentny, ale nic o Tobie nie wie. Nie wie jak piszesz ogłoszenia. Nie wie, że w Białymstoku mówi się „osiedle Bojary" a nie „dzielnica Bojary." Nie wie, że Twoi klienci wolą konkret od poetyckiego opisu.</p>
 
-  <p>To co dziś zbudujemy, jest czymś innym. To <strong>system</strong>. System pamięta. System ma procedury. System się uczy z twoich poprawek. Za każdym razem kiedy poprawisz tekst, który ci napisał, zapisuje sobie: „aha, woli tak, nie tak." I następnym razem pisze bliżej twojego stylu.</p>
+  <p>To co dziś zbudujemy, jest czymś innym. To <strong>Ambasystem</strong>. Pamięta. Ma procedury. Uczy się z Twoich poprawek. Za każdym razem kiedy poprawisz tekst, który Ci napisał, zapisuje sobie: „aha, woli tak, nie tak." I następnym razem pisze bliżej Twojego stylu.</p>
 
-  <p>Na koniec dnia będziesz mieć swój system. Nie ogólny. Twój. Dopasowany do tego jak ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
+  <p>Na koniec dnia będziesz mieć swój Ambasystem. Nie ogólny. Twój. Dopasowany do tego jak ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
 
   <span class="section-badge">Słownik</span>
   <h2>Pojęcia, które dziś usłyszysz</h2>
@@ -53,36 +59,36 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <div class="glossary">
     <div class="glossary-item">
+      <span class="glossary-term">Ambasystem</span>
+      <span class="glossary-def">Folder z plikami, który podłączasz do Claude. Zawiera procedury, pamięć i Twoje preferencje. Im więcej z nim pracujesz, tym lepiej rozumie jak piszesz i czego potrzebujesz. To nie jest chatbot. To narzędzie, które się uczy.</span>
+    </div>
+    <div class="glossary-item">
       <span class="glossary-term">Skill</span>
-      <span class="glossary-def">Procedura, którą system wykonuje za każdym razem tak samo. Jak przepis: ma składniki (dane od ciebie), kroki (co robi) i efekt (co dostajesz). Skill do ogłoszeń pisze opisy. Skill do dokumentów wypełnia formularze. Każdy skill uczy się z twoich poprawek.</span>
+      <span class="glossary-def">Procedura, którą Ambasystem wykonuje za każdym razem tak samo. Jak przepis: ma składniki (dane od Ciebie), kroki (co robi) i efekt (co dostajesz). Skill do ogłoszeń pisze opisy. Skill do dokumentów wypełnia formularze. Każdy skill uczy się z Twoich poprawek.</span>
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Pigułka (pill)</span>
-      <span class="glossary-def">Jednorazowa procedura. Wklejasz, przechodzisz, dostajesz wynik. Po użyciu znika z systemu. Dziś użyjesz kilku pigułek, żeby zbudować swoje skille.</span>
+      <span class="glossary-def">Jednorazowa procedura. Wklejasz, przechodzisz, dostajesz wynik. Po użyciu znika z Ambasystemu. Dziś użyjesz kilku pigułek, żeby zbudować swoje skille.</span>
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Preferencje</span>
-      <span class="glossary-def">To czego system nauczył się z twoich poprawek. Kiedy poprawisz tekst, system porównuje oryginał z twoją wersją i zapisuje różnicę. Im częściej poprawiasz to samo, tym mocniejsza reguła.</span>
+      <span class="glossary-def">To czego Ambasystem nauczył się z Twoich poprawek. Kiedy poprawisz tekst, Ambasystem porównuje oryginał z Twoją wersją i zapisuje różnicę. Im częściej poprawiasz to samo, tym mocniejsza reguła.</span>
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Wagi (×1, ×2, ×3+)</span>
-      <span class="glossary-def">Siła preferencji. ×1 to tendencja (system spróbuje). ×2 to domyślne zachowanie (system robi, chyba że kontekst mówi inaczej). ×3+ to twarda reguła (system robi zawsze).</span>
-    </div>
-    <div class="glossary-item">
-      <span class="glossary-term">Delta</span>
-      <span class="glossary-def">Różnica między wersją systemu a twoją wersją. System porównuje oba teksty, wyciąga wzorzec i dodaje go do preferencji. Nie musisz nic tłumaczyć. Wystarczy wkleić swoją wersję.</span>
+      <span class="glossary-def">Siła preferencji. ×1 to tendencja (Ambasystem spróbuje). ×2 to domyślne zachowanie (robi, chyba że kontekst mówi inaczej). ×3+ to twarda reguła (robi zawsze).</span>
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Dashboard</span>
-      <span class="glossary-def">Podsumowanie stanu systemu. Co masz, co było robione ostatnio, co jest otwarte. Aktualizuje się na koniec każdej sesji.</span>
+      <span class="glossary-def">Podsumowanie stanu Ambasystemu. Co masz, co było robione ostatnio, co jest otwarte. Aktualizuje się na koniec każdej sesji.</span>
     </div>
   </div>
 
   <span class="section-badge">Przygotowanie</span>
-  <h2>Konfiguracja systemu</h2>
+  <h2>Konfiguracja Ambasystemu</h2>
   <div class="section-divider"></div>
 
-  <p>Twój system to folder z plikami. Ściągnij go, otwórz Claude i podłącz folder. Prowadzący pomoże ci na miejscu.</p>
+  <p>Twój Ambasystem to folder z plikami. Ściągnij go, otwórz Claude i podłącz folder. Prowadzący pomoże Ci na miejscu.</p>
 
   <div class="download-card personalized">
     <div class="download-card-label">Twoja paczka</div>
@@ -104,7 +110,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
     <a href="/ambasada/Ambasystem.zip" class="download-link" download>Pobierz Ambasystem.zip</a>
   </div>
 
-  <p>Po rozpakowaniu otwórz Claude (aplikacja Cowork) i podłącz folder Ambasystem. System sam wczyta pliki i przygotuje się do pracy.</p>
+  <p>Po rozpakowaniu otwórz Claude (aplikacja Cowork) i podłącz folder Ambasystem. Ambasystem sam wczyta pliki i przygotuje się do pracy.</p>
 
 </div>
 </div>
@@ -117,35 +123,35 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
   <h2>Twój głos</h2>
   <div class="section-divider"></div>
 
-  <p>Dlaczego ChatGPT pisze „przestronne wnętrze w atrakcyjnej lokalizacji"? Nie dlatego, że jest głupi. Dlatego, że nie wie jak TY piszesz. Nie ma twojego stylu. Nie widział twoich ogłoszeń. Więc produkuje średnią ze wszystkich ogłoszeń, jakie kiedykolwiek przeczytał. A średnia jest z definicji nijaka.</p>
+  <p>Dlaczego ChatGPT pisze „przestronne wnętrze w atrakcyjnej lokalizacji"? Nie dlatego, że jest głupi. Dlatego, że nie wie jak TY piszesz. Nie ma Twojego stylu. Nie widział Twoich ogłoszeń. Więc produkuje średnią ze wszystkich ogłoszeń, jakie kiedykolwiek przeczytał. A średnia jest z definicji nijaka.</p>
 
-  <p>To co zaraz zrobisz, rozwiązuje ten problem. Wkleisz swoje opisy, a system przeanalizuje jak piszesz: jakie zdania, jaka kolejność informacji, jaki rejestr, jakie zwroty lubisz. Potem napisze opis w twoim stylu. Nie w swoim, nie w ogólnym. W twoim.</p>
+  <p>To co zaraz zrobisz, rozwiązuje ten problem. Wkleisz swoje opisy, a Ambasystem przeanalizuje jak piszesz: jakie zdania, jaka kolejność informacji, jaki rejestr, jakie zwroty lubisz. Potem napisze opis w Twoim stylu. Nie w swoim, nie w ogólnym. W Twoim.</p>
 
-  <p>Jeśli wynik nie będzie idealny, poprawisz go. I tu dzieje się magia: system porówna oryginał z twoją wersją i zapamięta różnicę. Następnym razem będzie bliżej. I znowu bliżej. I znowu. Po kilku poprawkach będziesz poprawiać coraz mniej, bo system coraz lepiej rozumie co masz na myśli.</p>
+  <p>Jeśli wynik nie będzie idealny, poprawisz go. I tu dzieje się magia: Ambasystem porówna oryginał z Twoją wersją i zapamięta różnicę. Następnym razem będzie bliżej. I znowu bliżej. I znowu. Po kilku poprawkach będziesz poprawiać coraz mniej, bo Ambasystem coraz lepiej rozumie co masz na myśli.</p>
 
   <span class="section-badge">Mechanizm</span>
-  <h2>Jak system się uczy</h2>
+  <h2>Jak Ambasystem się uczy</h2>
   <div class="section-divider"></div>
 
-  <p>Mechanizm jest prosty. Dostajesz tekst od systemu. Poprawiasz po swojemu. Wklejasz swoją wersję z powrotem. System porównuje oba teksty i wyciąga wzorce.</p>
+  <p>Mechanizm jest prosty. Dostajesz tekst od Ambasystemu. Poprawiasz po swojemu. Wklejasz swoją wersję z powrotem. Ambasystem porównuje oba teksty i wyciąga wzorce.</p>
 
-  <p>Na przykład: system napisał „oferuje doskonały dostęp do komunikacji miejskiej." Twoja wersja? „Przystanek autobusu 3 minuty pieszo." System zapamiętuje: <em>zamień abstrakcyjny opis na konkretną odległość</em>. To jest preferencja z wagą ×1.</p>
+  <p>Na przykład: Ambasystem napisał „oferuje doskonały dostęp do komunikacji miejskiej." Twoja wersja? „Przystanek autobusu 3 minuty pieszo." Ambasystem zapamiętuje: <em>zamień abstrakcyjny opis na konkretną odległość</em>. To jest preferencja z wagą ×1.</p>
 
-  <p>Następnym razem system pisze opis. Sprawdza preferencje. Widzi tę regułę i od razu pisze konkretem. Ty dostajesz tekst bliższy swojemu stylowi. Jeśli znowu poprawisz to samo, waga rośnie do ×2. Po kilku razach rośnie do ×3+ i staje się twardą regułą, której system nie złamie.</p>
+  <p>Następnym razem Ambasystem pisze opis. Sprawdza preferencje. Widzi tę regułę i od razu pisze konkretem. Ty dostajesz tekst bliższy swojemu stylowi. Jeśli znowu poprawisz to samo, waga rośnie do ×2. Po kilku razach rośnie do ×3+ i staje się twardą regułą, której Ambasystem nie złamie.</p>
 
-  <p>Nie musisz niczego tłumaczyć. Nie musisz pisać instrukcji. Wystarczy że poprawiasz i wklejasz. Różnica między wersją systemu a twoją wersją to jedyny sygnał, jakiego system potrzebuje.</p>
+  <p>Nie musisz niczego tłumaczyć. Nie musisz pisać instrukcji. Wystarczy że poprawiasz i wklejasz. Różnica między wersją Ambasystemu a Twoją wersją to jedyny sygnał, jakiego Ambasystem potrzebuje.</p>
 
   <span class="section-badge">Ćwiczenie</span>
   <h2>Co teraz robisz</h2>
   <div class="section-divider"></div>
 
-  <p>Prowadzący poda ci pigułkę do wklejenia. Po kolei:</p>
+  <p>Prowadzący poda Ci pigułkę do wklejenia. Po kolei:</p>
 
   <div class="steps-card">
     <ol>
-      <li>Wklej pigułkę do Claude. Spotkasz Zosię. Krótka rozmowa, system cię pozna.</li>
+      <li>Wklej pigułkę do Claude. Spotkasz Zosię. Krótka rozmowa, Ambasystem Cię pozna.</li>
       <li>Potem wklej drugą pigułkę. Spotkasz Nikę. Wklej jej 2-3 swoje opisy ogłoszeń.</li>
-      <li>Nika przeanalizuje twój styl i napisze opis w twoim głosie. Oceń od 1 do 10.</li>
+      <li>Nika przeanalizuje Twój styl i napisze opis w Twoim głosie. Oceń od 1 do 10.</li>
       <li>Jeśli coś nie pasuje, powiedz co. Nika poprawi i zapamięta.</li>
       <li>Na koniec dostajesz skill. Od teraz mówisz „napisz opis" i podajesz parametry mieszkania.</li>
     </ol>
@@ -178,41 +184,103 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <p><strong>Cel.</strong> Jedno zdanie. Co skill robi i dla kogo. Jeśli nie mieści się w jednym zdaniu, to nie jest jeden skill, tylko dwa.</p>
 
-  <p><strong>Wejście.</strong> Co skill dostaje od ciebie. Konkretnie: jakie dane, w jakim formacie, co jest minimum bez którego nie zacznie. Skill który zgaduje brakujące dane to skill który zmyśla.</p>
+  <p><strong>Wejście.</strong> Co skill dostaje od Ciebie. Konkretnie: jakie dane, w jakim formacie, co jest minimum bez którego nie zacznie. Skill który zgaduje brakujące dane to skill który zmyśla.</p>
 
   <p><strong>Procedura.</strong> Ponumerowane kroki. Każdy krok to jedna operacja. „Przeczytaj parametry i napisz hook" to dwa kroki, nie jeden. Konkretne instrukcje, nie przymiotniki. Nie „napisz angażujący opis" tylko „zacznij od cechy wyróżniającej, dodaj lokalizację, max 10 słów."</p>
 
   <p><strong>Anty-wzorce.</strong> Czego skill NIE robi. To ważniejsze niż procedura, bo AI ma tendencję do robienia rzeczy, o które nikt nie prosił. „Nie stackuj przymiotników," „nie dodawaj informacji których nie ma w danych," „nie używaj wykrzykników."</p>
 
-  <p><strong>Preferencje.</strong> Puste na start. Wypełniają się z twoich poprawek. To jest pamięć skilla. Im więcej poprawiasz, tym mądrzejszy.</p>
+  <p><strong>Preferencje.</strong> Puste na start. Wypełniają się z Twoich poprawek. To jest pamięć skilla. Im więcej poprawiasz, tym mądrzejszy.</p>
 
   <span class="section-badge">Ćwiczenie</span>
   <h2>Budowanie skilla z Vossem</h2>
   <div class="section-divider"></div>
 
-  <p>Teraz budujesz swój własny skill. Nie do ogłoszeń, bo ten już masz. Do czegoś innego. Do czegoś, co robisz regularnie i co zajmuje ci czas.</p>
+  <p>Teraz budujesz swój własny skill. Nie do ogłoszeń, bo ten już masz. Do czegoś innego. Do czegoś, co robisz regularnie i co zajmuje Ci czas.</p>
 
-  <p>Prowadzący poda ci pigułkę. Spotkasz Doktora Vossa. Naukowiec, trochę szalony, bardzo dokładny. Voss przeprowadzi cię przez trzy fazy:</p>
+  <p>Prowadzący poda Ci pigułkę. Spotkasz Doktora Vossa. Naukowiec, trochę szalony, bardzo dokładny. Voss przeprowadzi Cię przez trzy fazy:</p>
 
   <div class="steps-card">
     <ol>
-      <li><strong>Sekcja.</strong> Voss rozkłada twoją procedurę na części. Pyta, dopytuje, rozbija każdy krok na mniejsze. Na końcu masz mapę tego co robisz.</li>
+      <li><strong>Sekcja.</strong> Voss rozkłada Twoją procedurę na części. Pyta, dopytuje, rozbija każdy krok na mniejsze. Na końcu masz mapę tego co robisz.</li>
       <li><strong>Konstrukcja.</strong> Voss buduje skill z tych części. Doprecyzowuje, dodaje anty-wzorce, zapisuje plik. Dostajesz gotowy skill do przejrzenia.</li>
       <li><strong>Weryfikacja.</strong> Voss testuje skill. Próbuje go złamać. Naprawia co się da. Pokazuje że działa na normalnym przypadku. Pokazuje jak się uczy z poprawek.</li>
     </ol>
   </div>
 
-  <p>Cały proces zajmuje ~30 minut. Na końcu masz drugi skill w swoim systemie. Możesz budować kolejne.</p>
+  <p>Cały proces zajmuje ~30 minut. Na końcu masz drugi skill w swoim Ambasystemie. Możesz budować kolejne.</p>
 
   <span class="section-badge">Dalej</span>
   <h2>Co teraz</h2>
   <div class="section-divider"></div>
 
-  <p>Masz system. Ma twoje skille, twoją pamięć, twoje preferencje. Każda sesja go wzmacnia. Każda poprawka go uczy. Im więcej pracujesz z systemem, tym mniej poprawiasz.</p>
+  <p>Masz Ambasystem. Ma Twoje skille, Twoją pamięć, Twoje preferencje. Każda sesja go wzmacnia. Każda poprawka go uczy. Im więcej pracujesz z Ambasystemem, tym mniej poprawiasz.</p>
 
-  <p>Kiedy zamykasz sesję (mówisz „zamykamy" albo „koniec na dziś"), system robi porządek: podsumowuje co się wydarzyło, sprawdza pliki, zbiera twoje poprawki i wpisuje je do skilli. Następna sesja zaczyna się od tego stanu.</p>
+  <p>Kiedy zamykasz sesję (mówisz „zamykamy" albo „koniec na dziś"), Ambasystem robi porządek: podsumowuje co się wydarzyło, sprawdza pliki, zbiera Twoje poprawki i wpisuje je do skilli. Następna sesja zaczyna się od tego stanu.</p>
 
-  <p>Potrzebujesz nowego skilla? Wklej pigułkę Vossa i przejdź przez trzy fazy. Można to robić bez warsztatu. Voss jest w twoim folderze.</p>
+  <p>Potrzebujesz nowego skilla? Wklej pigułkę Vossa i przejdź przez trzy fazy. Można to robić bez warsztatu. Voss jest w Twoim folderze.</p>
+
+</div>
+</div>
+
+
+<!-- ═══════════════ PANEL 4: IDEALNA KONWERSACJA ═══════════════ -->
+<div class="ws-panel" id="panel-konwersacja">
+<div class="workshop-page">
+
+  <span class="section-badge">Przepis</span>
+  <h2>Idealna konwersacja</h2>
+  <div class="section-divider"></div>
+
+  <p>Jedna konwersacja = jedno zadanie. Chcesz napisać opis mieszkania na Bojarach? To jest jedna konwersacja. Chcesz potem napisać maila do klienta? Nowa konwersacja. Ambasystem działa najlepiej, kiedy wie o czym rozmawiacie. Mieszanie tematów go myli.</p>
+
+  <p>Oto jak wygląda idealna sesja od otwarcia do zamknięcia:</p>
+
+  <div class="chat-flow">
+
+    <div class="chat-step">
+      <div class="chat-step-label">1. Otwarcie</div>
+      <div class="chat-bubble system">Cześć! Widzę Twoje skille i ostatnią sesję. Nad czym dziś pracujemy?</div>
+      <div class="chat-bubble user">Napisz mi opis. Mieszkanie na Bojarach, 3 pokoje, 65m², balkon, 4 piętro.</div>
+      <div class="chat-note">Ambasystem wczytuje Twoje pliki na starcie. Wie co robiliście ostatnio. Podaj zadanie i parametry od razu.</div>
+    </div>
+
+    <div class="chat-step">
+      <div class="chat-step-label">2. Generowanie</div>
+      <div class="chat-bubble system">Oto opis na podstawie Twojego skilla i preferencji: [...]</div>
+      <div class="chat-note">Ambasystem używa Twojego skilla. Nie pisze „od siebie." Stosuje Twoje preferencje, Twój styl, Twoje anty-wzorce.</div>
+    </div>
+
+    <div class="chat-step">
+      <div class="chat-step-label">3. Feedback</div>
+      <div class="chat-bubble user">Dobry kierunek, ale za długi akapit o okolicy. Skróć do dwóch zdań. I „atrakcyjna lokalizacja" to dokładnie to czego nie chcę.</div>
+      <div class="chat-bubble system">Poprawione. Okolica w dwóch zdaniach, bez ogólników. [...]</div>
+      <div class="chat-note">Mów co nie pasuje. Konkretnie. Ambasystem zapamięta to przy zamknięciu sesji i następnym razem zrobi lepiej.</div>
+    </div>
+
+    <div class="chat-step">
+      <div class="chat-step-label">4. Albo wklej swoją wersję</div>
+      <div class="chat-bubble user">[wkleja poprawiony tekst]</div>
+      <div class="chat-bubble system">Widzę zmiany. Okolica krótsza, przymiotniki zamienione na konkrety. Zapamiętam.</div>
+      <div class="chat-note">Nie musisz tłumaczyć co się zmieniło. Wklej swoją wersję, a Ambasystem sam porówna i wyciągnie wzorzec.</div>
+    </div>
+
+    <div class="chat-step">
+      <div class="chat-step-label">5. Zamknięcie</div>
+      <div class="chat-bubble user">Zamykamy.</div>
+      <div class="chat-bubble system">Dziś napisaliśmy opis na Bojary. Zapamiętałem dwie rzeczy: krótsze opisy okolicy i konkrety zamiast przymiotników. Coś powinno działać inaczej następnym razem?</div>
+      <div class="chat-note">Powiedz „zamykamy" i Ambasystem zrobi porządek: zapisze poprawki do skilli, zaktualizuje dashboard, przygotuje się na następną sesję.</div>
+    </div>
+
+  </div>
+
+  <span class="section-badge">Zasada</span>
+  <h2>Jedna rozmowa, jeden temat</h2>
+  <div class="section-divider"></div>
+
+  <p>To najważniejsza zasada. Ambasystem zbiera Twoje poprawki i wpisuje je do skilli przy zamknięciu sesji. Jeśli w jednej rozmowie mieszasz opis mieszkania z mailem do klienta i notatką z oględzin, Ambasystem nie wie które poprawki dotyczą którego skilla.</p>
+
+  <p>Krótkie, skupione sesje. Jedno zadanie, feedback, zamknięcie. Następne zadanie = nowa konwersacja. Tak Ambasystem uczy się najszybciej.</p>
 
 </div>
 </div>
@@ -532,6 +600,72 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
   .steps-card li strong {
     color: var(--color-text);
     font-weight: 500;
+  }
+
+  /* Chat flow */
+  .chat-flow {
+    margin: 32px 0 48px;
+  }
+
+  .chat-step {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .chat-step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .chat-step-label {
+    font-family: var(--font-body);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 16px;
+  }
+
+  .chat-bubble {
+    max-width: 85%;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.7;
+    border-radius: 12px;
+  }
+
+  .chat-bubble.system {
+    background: rgba(166,124,55,0.06);
+    border: 1px solid var(--color-gold-dim);
+    color: var(--color-text-muted);
+    margin-right: auto;
+    border-bottom-left-radius: 4px;
+  }
+
+  .chat-bubble.user {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+  }
+
+  .chat-note {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    opacity: 0.7;
+    margin-top: 12px;
+    padding-left: 4px;
+    line-height: 1.6;
+    font-style: italic;
   }
 </style>
 
