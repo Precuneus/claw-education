@@ -39,11 +39,11 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
   <h2>AI to system, nie rozmówca</h2>
   <div class="section-divider"></div>
 
-  <p>Pewnie znasz ChatGPT. Wpisujesz pytanie, dostajesz odpowiedź. Czasem dobrą, czasem taką, że szybciej napisać samodzielnie. I pewnie myślisz: „no ok, ale to nie jest jeszcze na tyle dobre, żeby mi zastąpiło pracę."</p>
+  <p>Pewnie używałeś ChatGPT. Wpisałeś pytanie, dostałeś odpowiedź. Czasem dobrą, czasem taką, że szybciej byłoby napisać samemu. I pewnie pomyślałeś: „no ok, ale to nie jest jeszcze na tyle dobre, żeby mi zastąpiło pracę."</p>
 
-  <p>I słusznie. Pojedyncza rozmowa z AI to jak rozmowa z kimś, kto jest bardzo elokwentny, ale nic o tobie nie wie. Nie wie jak piszesz ogłoszenia. Nie wie, że w Białymstoku mówi się „osiedle Bojary" a nie „dzielnica Bojary." Nie wie, że twoi klienci wolą konkret od poetyckiego opisu.</p>
+  <p>I miałeś rację. Pojedyncza rozmowa z AI to jak rozmowa z kimś, kto jest bardzo elokwentny, ale nic o tobie nie wie. Nie wie jak piszesz ogłoszenia. Nie wie, że w Białymstoku mówi się „osiedle Bojary" a nie „dzielnica Bojary." Nie wie, że twoi klienci wolą konkret od poetyckiego opisu.</p>
 
-  <p>To co dziś zbudujemy, jest czymś innym. To <strong>system</strong>. System pamięta. System ma procedury. System się uczy z twoich poprawek. Za każdym razem kiedy poprawisz tekst, który ci napisał, zapisuje sobie: „aha, woli tak, nie tak." I następnym razem pisze bliżej twojego stylu.</p>
+  <p>To co dziś zbudujemy, jest czymś innym. To <strong>system</strong>. System pamięta. System ma procedury. System się uczy z twoich poprawek. Za każdym razem kiedy poprawisz tekst, który ci napisał, zapisuje sobie: „aha, on/ona woli tak, nie tak." I następnym razem pisze bliżej twojego stylu.</p>
 
   <p>Na koniec dnia będziesz mieć swój system. Nie ogólny. Twój. Dopasowany do tego jak ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
 
@@ -70,7 +70,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Delta</span>
-      <span class="glossary-def">Różnica między wersją systemu a twoją wersją. System porównuje oba teksty, wyciąga wzorzec i dodaje go do preferencji. Nie musisz nic tłumaczyć. Wystarczy wkleić swoją wersję.</span>
+      <span class="glossary-def">Różnica między tym co system napisał a tym co ty poprawiłeś. System porównuje obie wersje, wyciąga wzorzec i dodaje go do preferencji. Nie musisz tłumaczyć CO zmieniłeś. Wystarczy wkleić swoją wersję.</span>
     </div>
     <div class="glossary-item">
       <span class="glossary-term">Dashboard</span>
@@ -86,7 +86,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <div class="download-card personalized">
     <div class="download-card-label">Twoja paczka</div>
-    <div class="download-card-title">Dla osób z diagnostyki</div>
+    <div class="download-card-title">Dla uczestniczek diagnostyki</div>
     <div class="download-card-desc">System z wypełnionym profilem na podstawie ankiety. Znajdź swoje imię i pobierz.</div>
     <div class="personal-downloads">
       <a href="/ambasada/Ambasystem_anita.zip" class="download-link personal" download>Anita</a>
@@ -129,7 +129,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <p>Mechanizm jest prosty. Dostajesz tekst od systemu. Poprawiasz po swojemu. Wklejasz swoją wersję z powrotem. System porównuje oba teksty i wyciąga wzorce.</p>
 
-  <p>Na przykład: system napisał „oferuje doskonały dostęp do komunikacji miejskiej." Twoja wersja? „Przystanek autobusu 3 minuty pieszo." System zapamiętuje: <em>zamień abstrakcyjny opis na konkretną odległość</em>. To jest preferencja z wagą ×1.</p>
+  <p>Na przykład: system napisał „oferuje doskonały dostęp do komunikacji miejskiej." Ty zmieniłeś na „przystanek autobusu 3 minuty pieszo." System zapamiętuje: <em>zamień abstrakcyjny opis na konkretną odległość</em>. To jest preferencja z wagą ×1.</p>
 
   <p>Następnym razem system pisze opis. Sprawdza preferencje. Widzi tę regułę i od razu pisze konkretem. Ty dostajesz tekst bliższy swojemu stylowi. Jeśli znowu poprawisz to samo, waga rośnie do ×2. Po kilku razach rośnie do ×3+ i staje się twardą regułą, której system nie złamie.</p>
 
@@ -168,7 +168,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <p>Dekompozycja to rozbijanie tego co robisz na atomowe kroki. Nie „piszę ogłoszenie" tylko: (1) czytam parametry, (2) wybieram hook, (3) opisuję rozkład, (4) opisuję okolicę, (5) dopisuję formalności. Każdy krok to jedna operacja. Każda operacja ma wejście i wyjście.</p>
 
-  <p>Kiedy rozkładasz swoją pracę na kroki, odkrywasz rzeczy, o których nie masz pojęcia. Na przykład: że zawsze zaczynasz od lokalizacji, a nie od metrażu. Albo że krok „opisuję okolicę" wymaga wiedzy, której nie ma w parametrach, bo znasz osiedle z głowy. Albo że jeden krok jest tak skomplikowany, że tak naprawdę to trzy kroki udające jeden.</p>
+  <p>Kiedy rozkładasz swoją pracę na kroki, odkrywasz rzeczy, o których nie wiedziałeś. Na przykład: że zawsze zaczynasz od lokalizacji, a nie od metrażu. Albo że krok „opisuję okolicę" wymaga wiedzy, której nie ma w parametrach, bo znasz osiedle z głowy. Albo że jeden krok jest tak skomplikowany, że tak naprawdę to trzy kroki udające jeden.</p>
 
   <span class="section-badge">Budowanie</span>
   <h2>Co to jest dobry skill</h2>
@@ -212,7 +212,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <p>Kiedy zamykasz sesję (mówisz „zamykamy" albo „koniec na dziś"), system robi porządek: podsumowuje co się wydarzyło, sprawdza pliki, zbiera twoje poprawki i wpisuje je do skilli. Następna sesja zaczyna się od tego stanu.</p>
 
-  <p>Potrzebujesz nowego skilla? Wklej pigułkę Vossa i przejdź przez trzy fazy. Można to robić bez warsztatu. Voss jest w twoim folderze.</p>
+  <p>Kiedy będziesz chciał nowy skill, wklej pigułkę Vossa i przejdź przez trzy fazy. Możesz to robić sam, bez warsztatu. Voss jest w twoim folderze.</p>
 
 </div>
 </div>
