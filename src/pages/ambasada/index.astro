@@ -51,7 +51,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
   <p>To co dziś zbudujemy, jest czymś innym. To <strong>Ambasystem</strong>. Pamięta. Ma procedury. Uczy się z Twoich poprawek. Za każdym razem kiedy poprawisz tekst, który Ci napisał, zapisuje sobie: „aha, woli tak, nie tak." I następnym razem pisze bliżej Twojego stylu.</p>
 
-  <p>Na koniec dnia będziesz mieć swój Ambasystem. Nie ogólny. Twój. Dopasowany do tego jak ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
+  <p>Na koniec dnia będziesz mieć swój Ambasystem. Nie ogólny. Twój. Dopasowany do tego jak Ty pracujesz, jak piszesz, czego potrzebujesz. I będzie się dalej dopasowywał po każdej sesji.</p>
 
   <span class="section-badge">Słownik</span>
   <h2>Pojęcia, które dziś usłyszysz</h2>
@@ -93,7 +93,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
   <div class="download-card personalized">
     <div class="download-card-label">Twoja paczka</div>
     <div class="download-card-title">Dla osób z diagnostyki</div>
-    <div class="download-card-desc">System z wypełnionym profilem na podstawie ankiety. Znajdź swoje imię i pobierz.</div>
+    <div class="download-card-desc">Ambasystem z wypełnionym profilem na podstawie ankiety. Znajdź swoje imię i pobierz.</div>
     <div class="personal-downloads">
       <a href="/ambasada/Ambasystem_anita.zip" class="download-link personal" download>Anita</a>
       <a href="/ambasada/Ambasystem_beata.zip" class="download-link personal" download>Beata</a>
@@ -240,6 +240,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
     <div class="chat-step">
       <div class="chat-step-label">1. Otwarcie</div>
+      <div class="chat-bubble user">Zaczynajmy.</div>
       <div class="chat-bubble system">Cześć! Widzę Twoje skille i ostatnią sesję. Nad czym dziś pracujemy?</div>
       <div class="chat-bubble user">Napisz mi opis. Mieszkanie na Bojarach, 3 pokoje, 65m², balkon, 4 piętro.</div>
       <div class="chat-note">Ambasystem wczytuje Twoje pliki na starcie. Wie co robiliście ostatnio. Podaj zadanie i parametry od razu.</div>
@@ -267,9 +268,9 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
 
     <div class="chat-step">
       <div class="chat-step-label">5. Zamknięcie</div>
-      <div class="chat-bubble user">Zamykamy.</div>
+      <div class="chat-bubble user">Kończymy.</div>
       <div class="chat-bubble system">Dziś napisaliśmy opis na Bojary. Zapamiętałem dwie rzeczy: krótsze opisy okolicy i konkrety zamiast przymiotników. Coś powinno działać inaczej następnym razem?</div>
-      <div class="chat-note">Powiedz „zamykamy" i Ambasystem zrobi porządek: zapisze poprawki do skilli, zaktualizuje dashboard, przygotuje się na następną sesję.</div>
+      <div class="chat-note">Powiedz „kończymy" i Ambasystem zrobi porządek: zapisze poprawki do skilli, zaktualizuje dashboard, przygotuje się na następną sesję.</div>
     </div>
 
   </div>
@@ -568,7 +569,7 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
   }
 
   .download-card.personalized {
-    border-color: var(--clr-gold-dim);
+    border-color: var(--color-gold-dim);
   }
 
   .download-link:hover {
