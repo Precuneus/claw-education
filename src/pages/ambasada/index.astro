@@ -91,6 +91,19 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
     <a href="/ambasada/Ambasystem.zip" class="download-link" download>Pobierz Ambasystem.zip</a>
   </div>
 
+  <div class="download-card personalized">
+    <div class="download-card-label">Wersja spersonalizowana</div>
+    <div class="download-card-title">Dla uczestniczek diagnostyki</div>
+    <div class="download-card-desc">Twoja paczka ma już wypełniony profil na podstawie ankiety. Znajdź swoje imię i pobierz.</div>
+    <div class="personal-downloads">
+      <a href="/ambasada/Ambasystem_anita.zip" class="download-link personal" download>Anita</a>
+      <a href="/ambasada/Ambasystem_beata.zip" class="download-link personal" download>Beata</a>
+      <a href="/ambasada/Ambasystem_edyta.zip" class="download-link personal" download>Edyta</a>
+      <a href="/ambasada/Ambasystem_kasia.zip" class="download-link personal" download>Kasia</a>
+      <a href="/ambasada/Ambasystem_magda.zip" class="download-link personal" download>Magda</a>
+    </div>
+  </div>
+
   <p>Po rozpakowaniu otwórz Claude (aplikacja Cowork) i podłącz folder Ambasystem. System sam wczyta pliki i przygotuje się do pracy.</p>
 
 </div>
@@ -469,6 +482,25 @@ import CompanyLayout from '../../layouts/CompanyLayout.astro';
     border: 1px solid var(--color-gold-dim);
     padding: 8px 20px;
     transition: all 0.3s;
+  }
+
+  .personal-downloads {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .download-link.personal {
+    flex: 1;
+    min-width: 80px;
+    text-align: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .download-card.personalized {
+    border-color: var(--clr-gold-dim);
   }
 
   .download-link:hover {
