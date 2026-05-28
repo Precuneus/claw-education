@@ -135,13 +135,29 @@ import '../../styles/global.css';
           </div>
         </div>
 
-        <div class="step">
-          <div class="step-number">7</div>
-          <div class="step-content">
-            <h3>Zamknij sesję</h3>
-            <p>Na koniec wklej <code>skill_koniec_rozmowy.md</code> i napisz "zamykamy". System podsumuje sesję, zaktualizuje preferencje na podstawie Twoich korekt i zapisze stan dashboardu. Następna sesja zaczyna się tam, gdzie ta skończyła. To jest mechanizm uczenia się.</p>
-          </div>
-        </div>
+      </div>
+    </section>
+
+    <!-- How a session works -->
+    <section class="section" id="jak-dziala-sesja">
+      <h2>Jak wygląda sesja pisania?</h2>
+      <p>Każda sesja ma trzy momenty: otwarcie, pisanie, zamknięcie.</p>
+
+      <div class="chat-window">
+        <div class="chat-phase-label">Otwarcie</div>
+        <div class="chat-msg user">Wklejasz <code>skill_pisz.md</code> i opisujesz zadanie.</div>
+        <div class="chat-msg user">Napisz wstęp do artykułu o edukacji krytycznej. Styl analityczny, bez patosu. Odbiorca: nauczyciel akademicki.</div>
+        <div class="chat-msg ai">WrAIdesk pisze wstęp. Jeden. Gotowy do wklejenia.</div>
+
+        <div class="chat-phase-label">Pisanie</div>
+        <div class="chat-msg user">Pierwsze zdanie za ogólne. Zacznij od problemu.</div>
+        <div class="chat-msg ai">Poprawiona wersja. Zapamiętano: otwierać od problemu, nie od kontekstu. [×2]</div>
+        <div class="chat-msg user">Dobra. Teraz drugi akapit — przejście do metodologii.</div>
+        <div class="chat-msg ai">Drugi akapit.</div>
+
+        <div class="chat-phase-label">Zamknięcie</div>
+        <div class="chat-msg user">Wklejasz <code>skill_koniec_rozmowy.md</code> i piszesz: zamykamy.</div>
+        <div class="chat-msg ai">Sesja zamknięta. Zaktualizowano preferencje. Dashboard zapisany. Następna sesja zaczyna się tu.</div>
       </div>
     </section>
 
@@ -541,6 +557,63 @@ import '../../styles/global.css';
       font-size: 0.82rem;
       color: var(--color-text-muted);
       margin: 0;
+    }
+
+    /* Chat window */
+    .chat-window {
+      margin-top: 2rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1.25rem;
+      background: var(--color-surface);
+    }
+
+    .chat-phase-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .chat-phase-label:first-child {
+      margin-top: 0;
+    }
+
+    .chat-msg {
+      max-width: 80%;
+      padding: 0.6rem 0.9rem;
+      border-radius: 1rem;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--color-text);
+    }
+
+    .chat-msg.user {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      align-self: flex-end;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .chat-msg.ai {
+      background: var(--color-gold);
+      color: #ffffff;
+      align-self: flex-start;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-msg code {
+      background: rgba(255,255,255,0.2);
+      color: inherit;
+      font-size: 0.82em;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
     }
 
     /* Phases */
