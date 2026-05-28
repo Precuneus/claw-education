@@ -73,6 +73,12 @@ import '../styles/global.css';
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const password = input.value;
+
+      if (password.trim().toLowerCase() === 'wraidesk') {
+        window.location.href = '/wrAIdesk/';
+        return;
+      }
+
       const slug = validatePassword(password);
 
       if (slug) {
