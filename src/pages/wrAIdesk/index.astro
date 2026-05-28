@@ -98,16 +98,8 @@ import '../../styles/global.css';
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
-            <h3>Wgraj pliki systemowe</h3>
-            <p>W ustawieniach projektu wgraj wszystkie pliki z folderu <code>constitutional_files/</code> jako wiedzę projektu. To rdzeń systemu.</p>
-            <div class="file-list">
-              <code>system_prompt.md</code>
-              <code>operations.md</code>
-              <code>MAP.md</code>
-              <code>domain.md</code>
-              <code>user.md</code>
-              <code>dashboard.md</code>
-            </div>
+            <h3>Wgraj pliki do projektu</h3>
+            <p>W ustawieniach projektu wgraj wszystkie pliki <code>.md</code> z rozpakowanego folderu jako wiedzę projektu. Wszystkie — system sam rozróżnia, który plik do czego służy.</p>
           </div>
         </div>
 
@@ -115,7 +107,7 @@ import '../../styles/global.css';
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Uruchom onboarding</h3>
-            <p>Otwórz nową rozmowę w projekcie. Wklej zawartość pliku <code>PROCEDURES/pills/pill_onboarding.md</code> i wyślij. System przeprowadzi Cię przez konfigurację przez rozmowę. Zajmie to około 10 minut.</p>
+            <p>Otwórz nową rozmowę i napisz: <em>uruchom pill_onboarding</em>. System przeprowadzi Cię przez konfigurację przez rozmowę. Około 10 minut.</p>
           </div>
         </div>
 
@@ -123,7 +115,7 @@ import '../../styles/global.css';
           <div class="step-number">5</div>
           <div class="step-content">
             <h3>Skalibruj swój głos</h3>
-            <p>W tej samej lub nowej rozmowie wklej zawartość <code>pill_kalibracja.md</code>. Podaj 2-3 przykłady własnych tekstów. System odczyta Twój styl i zapisze go w <code>user.md</code>.</p>
+            <p>Napisz: <em>uruchom pill_kalibracja</em>. Podaj 2-3 przykłady własnych tekstów. System odczyta Twój styl i zapisze go w profilu użytkownika.</p>
           </div>
         </div>
 
@@ -131,7 +123,7 @@ import '../../styles/global.css';
           <div class="step-number">6</div>
           <div class="step-content">
             <h3>Pisz</h3>
-            <p>Wklej <code>skill_pisz.md</code> na początku rozmowy i opisz zadanie. WrAIdesk pisze. Ty decydujesz, co zostaje. Jeśli coś nie gra, piszesz co konkretnie — system poprawia i zapamiętuje na bieżąco.</p>
+            <p>Opisz zadanie. WrAIdesk pisze. Ty decydujesz, co zostaje. Jeśli coś nie gra, piszesz co konkretnie — system poprawia i zapamiętuje na bieżąco.</p>
           </div>
         </div>
 
@@ -157,6 +149,12 @@ import '../../styles/global.css';
         <div class="chat-phase-label">Zamknięcie</div>
         <div class="chat-msg user">zamykamy</div>
         <div class="chat-msg ai">Dziś: wstęp (dwie wersje, finalna zaakceptowana) + akapit metodologiczny. Zapamiętane: otwierać od problemu, nie od definicji [×2]. Dashboard zaktualizowany. Do następnej.</div>
+      </div>
+
+      <div class="session-why">
+        <p><strong>Otwarcie</strong> aktywuje kontekst — system wie jaka dziedzina, jaki rejestr, jakie Twoje preferencje z poprzednich sesji. Bez tego pisze ogólnie.</p>
+        <p><strong>Korekty w trakcie</strong> to nie poprawki — to nauka. Każda zmiana, którą wprowadzasz, trafia do profilu z wagą. Im częściej coś korygujesz, tym silniejsza reguła. System nie resetuje się po zamknięciu zakładki.</p>
+        <p><strong>Zamknięcie</strong> zapisuje ten stan. Jeśli pominiesz, sesja przepadnie. Następna zaczyna się od zera.</p>
       </div>
     </section>
 
@@ -556,6 +554,26 @@ import '../../styles/global.css';
       font-size: 0.82rem;
       color: var(--color-text-muted);
       margin: 0;
+    }
+
+    /* Session why */
+    .session-why {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .session-why p {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      margin: 0;
+      color: var(--color-text-muted);
+    }
+
+    .session-why strong {
+      color: var(--color-text);
+      font-weight: 500;
     }
 
     /* Chat window */
