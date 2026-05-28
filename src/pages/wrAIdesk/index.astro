@@ -140,12 +140,10 @@ import '../../styles/global.css';
     <!-- How a session works -->
     <section class="section" id="jak-dziala-sesja">
       <h2>Jak wygląda sesja pisania?</h2>
-      <p>Każda sesja ma tę samą strukturę. Wklejasz <code>skill_pisz.md</code>, opisujesz zadanie, dostajesz tekst. Jeśli coś nie gra, piszesz co konkretnie. System poprawia i zapamiętuje.</p>
-      <p>Na końcu sesji wklejasz <code>skill_koniec_rozmowy.md</code>. System sam zamknie rozmowę, zaktualizuje swój profil o nowe preferencje i przygotuje się na następną sesję.</p>
-      <p>Nie musisz nic tłumaczyć od nowa. Następna sesja zaczyna się tam, gdzie poprzednia skończyła.</p>
+      <p>Każda sesja ma tę samą strukturę. Wklejasz <code>skill_pisz.md</code>, opisujesz zadanie, dostajesz tekst. Jeśli coś nie gra, piszesz co konkretnie. System poprawia i zapamiętuje na bieżąco.</p>
 
       <div class="example-box">
-        <p class="example-label">Przykład</p>
+        <p class="example-label">Przykład wymiany</p>
         <div class="example-flow">
           <div class="flow-item">
             <span class="flow-icon">→</span>
@@ -165,6 +163,46 @@ import '../../styles/global.css';
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Closing protocol -->
+    <section class="section alt" id="zamkniecie-sesji">
+      <h2>Zamknięcie sesji</h2>
+      <p>Każda sesja kończy się protokołem zamknięcia. Wklejasz zawartość <code>PROCEDURES/skills/skill_koniec_rozmowy.md</code> i piszesz "zamykamy" albo "koniec na dziś". System przechodzi przez cztery fazy i zamyka rozmowę w taki sposób, żeby następna zaczęła się lepiej niż ta.</p>
+      <p>To nie jest uprzejmość. To jest mechanizm uczenia się.</p>
+
+      <div class="phases">
+        <div class="phase">
+          <div class="phase-num">I</div>
+          <div class="phase-body">
+            <h3>Podsumowanie</h3>
+            <p>System opisuje w zwykłym języku co się wydarzyło w tej sesji: jakie pliki powstały, co zostało zmienione, co ustalono. Pyta: "Czy coś powinno działać inaczej następnym razem?" Twoja odpowiedź jest najcenniejszym sygnałem tej fazy.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">II</div>
+          <div class="phase-body">
+            <h3>Skan</h3>
+            <p>System przegląda całą strukturę plików i porównuje ze swoją mapą. Sprawdza, czy żaden plik nie wylądował w złym miejscu, czy pigułki po użyciu trafiły do kosza, czy mapa się zgadza z rzeczywistością. Wszystko co wymaga korekty mechanicznej poprawia od razu.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">III</div>
+          <div class="phase-body">
+            <h3>Aktualizacja skilli</h3>
+            <p>Tu dzieje się uczenie. System analizuje każdą korektę, którą zrobiłeś w tej sesji: edytowane teksty, słowne komentarze, zmiany tonu. Każdy wzorzec trafia do sekcji PREFERENCJE odpowiedniego skilla z wagą. Im częściej coś korygujesz, tym wyższa waga i tym silniejsza reguła w następnej sesji.</p>
+          </div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">IV</div>
+          <div class="phase-body">
+            <h3>Zapis stanu</h3>
+            <p>System przepisuje dashboard z aktualnym stanem: aktywne projekty, otwarte wątki, co się wydarzyło w tej sesji. Nie dopisuje do starego — zastępuje go obecnym. Dashboard to zawsze "teraz", nie historia.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="closing-note">Jeśli się spieszysz, napisz "zapisz szybko". System uruchomi skróconą wersję protokołu. Lekki closing jest lepszy niż żaden.</p>
     </section>
 
     <!-- Download CTA -->
@@ -563,6 +601,63 @@ import '../../styles/global.css';
       font-size: 0.82rem;
       color: var(--color-text-muted);
       margin: 0;
+    }
+
+    /* Phases */
+    .phases {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2.5rem;
+    }
+
+    .phase {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .phase:last-of-type { border-bottom: none; }
+
+    .phase-num {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--color-gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+      width: 2.5rem;
+      letter-spacing: 0.05em;
+      padding-top: 0.1rem;
+    }
+
+    .phase-body {
+      flex: 1;
+    }
+
+    .phase-body h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    .phase-body p {
+      font-size: 0.93rem;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .closing-note {
+      font-size: 0.88rem;
+      color: var(--color-text-muted);
+      margin-top: 2rem;
+      padding: 1rem 1.25rem;
+      border-left: 2px solid var(--color-gold-dim);
+      background: var(--color-bg);
+      border-radius: 0 var(--radius) var(--radius) 0;
     }
 
     footer a {
