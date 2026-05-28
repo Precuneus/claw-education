@@ -1,0 +1,575 @@
+---
+import '../../styles/global.css';
+---
+
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WrAIdesk | claw.education</title>
+  <meta name="description" content="WrAIdesk to system AI do pisania, który uczy się Twojego głosu i zostaje z Tobą na dłużej." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="/" class="nav-logo">claw.education</a>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Przełącz motyw">
+      <span class="icon-sun">☀</span>
+      <span class="icon-moon">☾</span>
+    </button>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <p class="label">claw.education przedstawia</p>
+      <h1>WrAIdesk</h1>
+      <p class="tagline">System AI do pisania, który uczy się Twojego głosu.</p>
+      <div class="hero-actions">
+        <a href="/wrAIdesk.zip" class="btn-primary" download>Pobierz WrAIdesk</a>
+        <a href="#jak-zaczac" class="btn-secondary">Jak zacząć?</a>
+      </div>
+    </section>
+
+    <!-- What it is -->
+    <section class="section" id="co-to-jest">
+      <h2>Co to jest WrAIdesk?</h2>
+      <p>WrAIdesk to gotowy system do Claude AI, który zamienia ogólny model językowy w Twojego osobistego asystenta pisarskiego. Nie piszesz ogólnie. Piszesz w swoim stylu, w swojej dziedzinie, z zachowaniem własnego głosu.</p>
+      <p>Każda sesja jest spójna. System pamięta Twoje preferencje, koryguje własne błędy po każdej rozmowie i z czasem staje się dokładniejszy. Im więcej piszesz z WrAIdeskiem, tym mniej go poprawiasz.</p>
+      <div class="features">
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Uczy się Twojego głosu</strong>
+            <p>Zbiera preferencje w trakcie pracy i przechowuje je między sesjami.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Zna Twoją dziedzinę</strong>
+            <p>Konfigurujesz raz: gatunek, rejestr, odbiorcy, konwencje. System tego nie zapomina.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Nie improwizuje</strong>
+            <p>Jeden output. Żadnych opcji do wyboru. Żadnego AI-języka. Tekst gotowy do wklejenia.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <span class="feature-icon">✦</span>
+          <div>
+            <strong>Rośnie razem z Tobą</strong>
+            <p>Po każdej sesji zamkniecie rozmowę protokołem, który zapisuje nowe wzorce. System nie resetuje się do zera.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to start -->
+    <section class="section alt" id="jak-zaczac">
+      <h2>Jak zacząć?</h2>
+      <p class="section-intro">Instalacja zajmuje około 15 minut. Potrzebujesz konta Claude (plan Pro lub wyższy) oraz dostępu do funkcji Projects.</p>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Pobierz i rozpakuj</h3>
+            <p>Pobierz plik <code>wrAIdesk.zip</code> i rozpakuj go na swoim komputerze. Zobaczysz folder <code>WrAIdesk/</code> ze strukturą systemu.</p>
+            <a href="/wrAIdesk.zip" class="download-link" download>Pobierz wrAIdesk.zip</a>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Utwórz projekt w Claude</h3>
+            <p>Wejdź na <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, kliknij <strong>Projects</strong> i utwórz nowy projekt o nazwie "WrAIdesk" (lub innej, którą zapamiętasz).</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Wgraj pliki systemowe</h3>
+            <p>W ustawieniach projektu wgraj wszystkie pliki z folderu <code>constitutional_files/</code> jako wiedzę projektu. To rdzeń systemu.</p>
+            <div class="file-list">
+              <code>system_prompt.md</code>
+              <code>operations.md</code>
+              <code>MAP.md</code>
+              <code>domain.md</code>
+              <code>user.md</code>
+              <code>dashboard.md</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3>Uruchom onboarding</h3>
+            <p>Otwórz nową rozmowę w projekcie. Wklej zawartość pliku <code>PROCEDURES/pills/pill_onboarding.md</code> i wyślij. System przeprowadzi Cię przez konfigurację przez rozmowę. Zajmie to około 10 minut.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Skalibruj swój głos</h3>
+            <p>W tej samej lub nowej rozmowie wklej zawartość <code>pill_kalibracja.md</code>. Podaj 2-3 przykłady własnych tekstów. System odczyta Twój styl i zapisze go w <code>user.md</code>.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3>Zacznij pisać</h3>
+            <p>Kiedy chcesz pisać, wklej na początku rozmowy zawartość <code>PROCEDURES/skills/skill_pisz.md</code>, a potem opisz zadanie. WrAIdesk pisze. Ty decydujesz, co zostaje.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How a session works -->
+    <section class="section" id="jak-dziala-sesja">
+      <h2>Jak wygląda sesja pisania?</h2>
+      <p>Każda sesja ma tę samą strukturę. Wklejasz <code>skill_pisz.md</code>, opisujesz zadanie, dostajesz tekst. Jeśli coś nie gra, piszesz co konkretnie. System poprawia i zapamiętuje.</p>
+      <p>Na końcu sesji wklejasz <code>skill_koniec_rozmowy.md</code>. System sam zamknie rozmowę, zaktualizuje swój profil o nowe preferencje i przygotuje się na następną sesję.</p>
+      <p>Nie musisz nic tłumaczyć od nowa. Następna sesja zaczyna się tam, gdzie poprzednia skończyła.</p>
+
+      <div class="example-box">
+        <p class="example-label">Przykład</p>
+        <div class="example-flow">
+          <div class="flow-item">
+            <span class="flow-icon">→</span>
+            <span>"Napisz wstęp do artykułu o edukacji krytycznej dla nauczycieli akademickich. Styl: analityczny, bez patosu."</span>
+          </div>
+          <div class="flow-item flow-response">
+            <span class="flow-icon">←</span>
+            <span>WrAIdesk pisze wstęp. Jeden. Gotowy do wklejenia.</span>
+          </div>
+          <div class="flow-item">
+            <span class="flow-icon">→</span>
+            <span>"Pierwsze zdanie jest zbyt ogólne. Zacznij od problemu."</span>
+          </div>
+          <div class="flow-item flow-response">
+            <span class="flow-icon">←</span>
+            <span>Poprawiona wersja + ×2 do preferencji: "otwierać od problemu, nie od kontekstu."</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download CTA -->
+    <section class="section cta">
+      <h2>Gotowy?</h2>
+      <p>Pobierz WrAIdesk i zainstaluj w swoim Claude Project. Pierwsze pisanie w ciągu 15 minut.</p>
+      <a href="/wrAIdesk.zip" class="btn-primary large" download>Pobierz WrAIdesk (zip)</a>
+      <p class="cta-note">Wymaga konta Claude Pro lub wyższego. Działa z Claude Projects.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>WrAIdesk &middot; <a href="/">claw.education</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    function getPreferredTheme() {
+      const stored = localStorage.getItem('claw_theme');
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('claw_theme', theme);
+    }
+
+    applyTheme(getPreferredTheme());
+
+    toggle.addEventListener('click', () => {
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+
+  <style>
+    /* Navigation */
+    .top-nav {
+      width: 100%;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: var(--color-bg);
+      z-index: 10;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--color-gold);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--color-border);
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-gold);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+
+    .theme-toggle:hover { border-color: var(--color-gold); }
+    [data-theme="light"] .icon-moon { display: none; }
+    [data-theme="dark"] .icon-sun { display: none; }
+
+    /* Layout */
+    body {
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .section {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    .section.alt {
+      background: var(--color-surface);
+      max-width: 100%;
+      padding: 5rem 2rem;
+    }
+
+    .section.alt > * {
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section.cta {
+      text-align: center;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 7rem 2rem 5rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      color: var(--color-gold);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: var(--color-text-muted);
+      font-weight: 300;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Buttons */
+    .btn-primary {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      background: var(--color-gold);
+      color: #ffffff;
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--color-gold-light); }
+    .btn-primary.large { padding: 0.9rem 2.25rem; font-size: 1rem; }
+
+    .btn-secondary {
+      display: inline-block;
+      padding: 0.75rem 1.75rem;
+      border: 1px solid var(--color-border);
+      color: var(--color-text);
+      border-radius: var(--radius);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: border-color 0.2s;
+    }
+
+    .btn-secondary:hover { border-color: var(--color-gold); color: var(--color-gold); }
+
+    /* Headings */
+    h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 400;
+      color: var(--color-gold);
+      margin-bottom: 1.25rem;
+      line-height: 1.2;
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: var(--color-text);
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+      margin-bottom: 1rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .section-intro {
+      font-size: 1.05rem;
+      margin-bottom: 2.5rem;
+    }
+
+    a {
+      color: var(--color-gold);
+    }
+
+    code {
+      font-size: 0.85em;
+      background: var(--color-surface);
+      padding: 0.1em 0.4em;
+      border-radius: 3px;
+      color: var(--color-text);
+    }
+
+    .alt code {
+      background: var(--color-bg);
+    }
+
+    /* Features */
+    .features {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .feature {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .feature-icon {
+      color: var(--color-gold);
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: var(--color-text);
+    }
+
+    .feature p {
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Steps */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .step:last-child { border-bottom: none; }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 300;
+      color: var(--color-gold);
+      opacity: 0.5;
+      flex-shrink: 0;
+      width: 2.5rem;
+      line-height: 1;
+      padding-top: 0.1rem;
+    }
+
+    .step-content {
+      flex: 1;
+    }
+
+    .step-content h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .step-content p {
+      font-size: 0.93rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .file-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.75rem;
+    }
+
+    .download-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.88rem;
+      color: var(--color-gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-gold-dim);
+      padding-bottom: 0.1rem;
+    }
+
+    .download-link:hover { color: var(--color-gold-light); border-color: var(--color-gold-light); }
+
+    /* Example box */
+    .example-box {
+      margin-top: 2.5rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .example-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      padding: 0.6rem 1.25rem;
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-surface);
+      margin: 0;
+    }
+
+    .example-flow {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .flow-item {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--color-text-muted);
+    }
+
+    .flow-item.flow-response {
+      color: var(--color-text);
+    }
+
+    .flow-icon {
+      color: var(--color-gold);
+      flex-shrink: 0;
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta h2 { margin-bottom: 1rem; }
+    .cta p { margin-bottom: 1.75rem; }
+    .cta-note {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin-top: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      width: 100%;
+      padding: 2rem;
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.82rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    footer a {
+      color: var(--color-gold);
+      text-decoration: none;
+    }
+  </style>
+
+</body>
+</html>
