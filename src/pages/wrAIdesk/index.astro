@@ -38,7 +38,7 @@ import '../../styles/global.css';
     <!-- What it is -->
     <section class="section" id="co-to-jest">
       <h2>Co to jest WrAIdesk?</h2>
-      <p>WrAIdesk to gotowy system do Claude AI, który zamienia ogólny model językowy w Twojego osobistego asystenta pisarskiego. Nie piszesz ogólnie. Piszesz w swoim stylu, w swojej dziedzinie, z zachowaniem własnego głosu.</p>
+      <p>WrAIdesk to gotowy system dla Claude w trybie Cowork, który zamienia ogólny model językowy w Twojego osobistego asystenta pisarskiego. Nie piszesz ogólnie. Piszesz w swoim stylu, w swojej dziedzinie, z zachowaniem własnego głosu.</p>
       <p>Każda sesja jest spójna. System pamięta Twoje preferencje, koryguje własne błędy po każdej rozmowie i z czasem staje się dokładniejszy. Im więcej piszesz z WrAIdeskiem, tym mniej go poprawiasz.</p>
       <div class="features">
         <div class="feature">
@@ -66,7 +66,7 @@ import '../../styles/global.css';
           <span class="feature-icon">✦</span>
           <div>
             <strong>Rośnie razem z Tobą</strong>
-            <p>Po każdej sesji zamkniecie rozmowę protokołem, który zapisuje nowe wzorce. System nie resetuje się do zera.</p>
+            <p>Po każdej sesji zamykasz rozmowę protokołem, który zapisuje nowe wzorce. System nie resetuje się do zera.</p>
           </div>
         </div>
       </div>
@@ -75,7 +75,7 @@ import '../../styles/global.css';
     <!-- How to start -->
     <section class="section alt" id="jak-zaczac">
       <h2>Jak zacząć?</h2>
-      <p class="section-intro">Instalacja zajmuje około 15 minut. Potrzebujesz konta Claude (plan Pro lub wyższy) oraz dostępu do funkcji Projects.</p>
+      <p class="section-intro">Instalacja zajmuje około 15 minut. Potrzebujesz aplikacji Claude na komputer z trybem Cowork i dostępem do folderu na dysku. W tym trybie system czyta i zapisuje własne pliki, dlatego pamięta między sesjami.</p>
 
       <div class="steps">
         <div class="step">
@@ -90,16 +90,16 @@ import '../../styles/global.css';
         <div class="step">
           <div class="step-number">2</div>
           <div class="step-content">
-            <h3>Utwórz projekt</h3>
-            <p>Na <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> utwórz nowy projekt: <strong>WrAIdesk</strong>.</p>
+            <h3>Podłącz folder</h3>
+            <p>Rozpakuj <code>wrAIdesk.zip</code> do folderu na dysku. W aplikacji Claude (tryb Cowork) wskaż ten folder jako katalog roboczy.</p>
           </div>
         </div>
 
         <div class="step">
           <div class="step-number">3</div>
           <div class="step-content">
-            <h3>Wgraj pliki</h3>
-            <p>W ustawieniach projektu wgraj wszystkie pliki <code>.md</code> z rozpakowanego folderu jako wiedzę projektu.</p>
+            <h3>Wczytaj system</h3>
+            <p>W nowej rozmowie napisz: <em>wczytaj system</em>. WrAIdesk odczyta swoje pliki z folderu i załaduje konfigurację.</p>
           </div>
         </div>
 
@@ -123,7 +123,7 @@ import '../../styles/global.css';
           <div class="step-number">6</div>
           <div class="step-content">
             <h3>Pisz</h3>
-            <p>Opisz zadanie. WrAIdesk pisze. Korygujesz co konkretnie — system poprawia i zapamiętuje.</p>
+            <p>Opisz zadanie. WrAIdesk pisze. Korygujesz co konkretnie. System poprawia i zapamiętuje.</p>
           </div>
         </div>
 
@@ -138,21 +138,21 @@ import '../../styles/global.css';
       <div class="chat-window">
         <div class="chat-phase-label">Otwarcie</div>
         <div class="chat-msg user">Napisz wstęp do artykułu o edukacji krytycznej. Styl analityczny, bez patosu. Odbiorca: nauczyciel akademicki.</div>
-        <div class="chat-msg ai">Edukacja krytyczna nie jest metodą dydaktyczną. Jest zestawem założeń epistemologicznych, które wymagają od nauczyciela akademickiego zmiany pozycji względem wiedzy i jej transmisji. Zmiana ta ma konsekwencje dla projektowania kursu, doboru literatury i sposobu oceniania — i właśnie o tych konsekwencjach traktuje ten artykuł.</div>
+        <div class="chat-msg ai">Edukacja krytyczna to zestaw założeń epistemologicznych o naturze wiedzy i jej przekazywaniu. Przyjęcie tych założeń zmienia pozycję nauczyciela akademickiego wobec własnego kursu. Konsekwencje sięgają projektowania zajęć, doboru literatury i sposobu oceniania. O nich traktuje ten artykuł.</div>
 
         <div class="chat-phase-label">Pisanie</div>
         <div class="chat-msg user">Pierwsze zdanie za ogólne. Zacznij od problemu.</div>
-        <div class="chat-msg ai">Dominujący model akademicki zakłada neutralność wiedzy. Edukacja krytyczna tę neutralność kwestionuje — i to kwestionowanie jest jej punktem wyjścia, nie dekoracją. Nauczyciel, który przyjmuje jej założenia, musi zrewidować nie tylko treść kursu, ale sam akt nauczania.</div>
+        <div class="chat-msg ai">Dominujący model akademicki zakłada neutralność wiedzy. Edukacja krytyczna podważa to założenie i z tego podważenia czyni swój punkt wyjścia. Nauczyciel, który je przyjmuje, rewiduje nie tylko treść kursu, ale sam akt nauczania.</div>
         <div class="chat-msg user">Teraz akapit o metodologii. Krótko.</div>
         <div class="chat-msg ai">Artykuł opiera się na analizie trzech studiów przypadku zrealizowanych w ramach kursów akademickich na poziomie magisterskim. Każdy przypadek dokumentuje próbę wdrożenia założeń pedagogiki krytycznej w warunkach instytucjonalnych, które tym założeniom nie sprzyjają.</div>
 
         <div class="chat-phase-label">Zamknięcie</div>
         <div class="chat-msg user">zamykamy</div>
-        <div class="chat-msg ai">Dziś: wstęp (dwie wersje, finalna zaakceptowana) + akapit metodologiczny. Zapamiętane: otwierać od problemu, nie od definicji [×2]. Dashboard zaktualizowany. Do następnej.</div>
+        <div class="chat-msg ai">Dziś: wstęp (dwie wersje, finalna zaakceptowana) + akapit metodologiczny. Zapamiętane: otwierać akapit od problemu [×2]. Dashboard zaktualizowany. Do następnej.</div>
       </div>
 
       <div class="session-why">
-        <p><strong>Otwarcie</strong> aktywuje kontekst — system wie jaka dziedzina, jaki rejestr, jakie Twoje preferencje z poprzednich sesji. Każda sesja zaczyna się z pełną wiedzą o tym, jak piszesz.</p>
+        <p><strong>Otwarcie</strong> aktywuje kontekst: system wie jaka dziedzina, jaki rejestr i jakie Twoje preferencje z poprzednich sesji. Każda sesja zaczyna się z pełną wiedzą o tym, jak piszesz.</p>
         <p><strong>Korekty w trakcie</strong> trafiają do profilu z wagą. Im częściej coś zmieniasz, tym silniejsza reguła. Z każdą sesją system zbliża się do Twojego głosu.</p>
         <p><strong>Zamknięcie</strong> utrwala ten stan na przyszłość. Następna sesja zaczyna się dokładnie tam, gdzie ta skończyła.</p>
       </div>
@@ -161,9 +161,9 @@ import '../../styles/global.css';
     <!-- Download CTA -->
     <section class="section cta">
       <h2>Gotowy?</h2>
-      <p>Pobierz WrAIdesk i zainstaluj w swoim Claude Project. Pierwsze pisanie w ciągu 15 minut.</p>
+      <p>Pobierz WrAIdesk i podłącz folder w trybie Cowork. Pierwsze pisanie w ciągu 15 minut.</p>
       <a href="/wrAIdesk.zip" class="btn-primary large" download>Pobierz WrAIdesk (zip)</a>
-      <p class="cta-note">Wymaga konta Claude Pro lub wyższego. Działa z Claude Projects.</p>
+      <p class="cta-note">Wymaga aplikacji Claude na komputer z trybem Cowork i dostępem do folderu. Pamięć i nauka działają, bo system zapisuje pliki na Twoim dysku.</p>
     </section>
 
   </main>
@@ -469,13 +469,6 @@ import '../../styles/global.css';
       margin-bottom: 0.75rem;
     }
 
-    .file-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.75rem;
-    }
-
     .download-link {
       display: inline-block;
       margin-top: 0.5rem;
@@ -487,51 +480,6 @@ import '../../styles/global.css';
     }
 
     .download-link:hover { color: var(--color-gold-light); border-color: var(--color-gold-light); }
-
-    /* Example box */
-    .example-box {
-      margin-top: 2.5rem;
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-
-    .example-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--color-text-muted);
-      padding: 0.6rem 1.25rem;
-      border-bottom: 1px solid var(--color-border);
-      background: var(--color-surface);
-      margin: 0;
-    }
-
-    .example-flow {
-      padding: 1.25rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .flow-item {
-      display: flex;
-      gap: 0.75rem;
-      align-items: flex-start;
-      font-size: 0.88rem;
-      line-height: 1.5;
-      color: var(--color-text-muted);
-    }
-
-    .flow-item.flow-response {
-      color: var(--color-text);
-    }
-
-    .flow-icon {
-      color: var(--color-gold);
-      flex-shrink: 0;
-      font-weight: 500;
-    }
 
     /* CTA */
     .cta h2 { margin-bottom: 1rem; }
@@ -631,63 +579,6 @@ import '../../styles/global.css';
       font-size: 0.82em;
       padding: 0.1em 0.3em;
       border-radius: 3px;
-    }
-
-    /* Phases */
-    .phases {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-top: 2.5rem;
-    }
-
-    .phase {
-      display: flex;
-      gap: 1.5rem;
-      align-items: flex-start;
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .phase:last-of-type { border-bottom: none; }
-
-    .phase-num {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: var(--color-gold);
-      opacity: 0.6;
-      flex-shrink: 0;
-      width: 2.5rem;
-      letter-spacing: 0.05em;
-      padding-top: 0.1rem;
-    }
-
-    .phase-body {
-      flex: 1;
-    }
-
-    .phase-body h3 {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      color: var(--color-text);
-    }
-
-    .phase-body p {
-      font-size: 0.93rem;
-      margin: 0;
-      line-height: 1.7;
-    }
-
-    .closing-note {
-      font-size: 0.88rem;
-      color: var(--color-text-muted);
-      margin-top: 2rem;
-      padding: 1rem 1.25rem;
-      border-left: 2px solid var(--color-gold-dim);
-      background: var(--color-bg);
-      border-radius: 0 var(--radius) var(--radius) 0;
     }
 
     footer a {
