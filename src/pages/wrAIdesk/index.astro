@@ -91,7 +91,7 @@ import '../../styles/global.css';
           <div class="step-number">2</div>
           <div class="step-content">
             <h3>Nowy projekt w Cowork</h3>
-            <p>W aplikacji Claude (tryb Cowork) załóż nowy projekt.</p>
+            <p>W aplikacji Claude (tryb Cowork) załóż nowy projekt. Wybierz model do swojej pracy: Sonnet do drobnych zadań (akapity, sekcje), Opus do złożonych całości z zależnościami i architekturą.</p>
           </div>
         </div>
 
@@ -107,30 +107,15 @@ import '../../styles/global.css';
           <div class="step-number">4</div>
           <div class="step-content">
             <h3>Wklej instrukcje</h3>
-            <p>Wklej tekst poniżej jako instrukcje projektu.</p>
-          </div>
-        </div>
-
-        <div class="step">
-          <div class="step-number">5</div>
-          <div class="step-content">
-            <h3>Zapisz i zacznij</h3>
-            <p>Zapisz projekt i zacznij pierwszą rozmowę. Napisz <em>zaczynamy</em>; system poprowadzi konfigurację.</p>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="instr-box">
-        <div class="instr-box-head">
-          <span>Instrukcje do wklejenia</span>
-          <button class="instr-copy" id="instr-copy" type="button">Kopiuj</button>
-        </div>
-        <textarea class="instr-text" id="instr-text" readonly rows="14"># SYSTEM / INSTRUKCJE
+            <p>Wklej te instrukcje jako instrukcje projektu:</p>
+            <div class="instr-box">
+              <div class="instr-box-head">
+                <span>Instrukcje do wklejenia</span>
+                <button class="instr-copy" id="instr-copy" type="button">Kopiuj</button>
+              </div>
+              <textarea class="instr-text" id="instr-text" readonly rows="14"># SYSTEM / INSTRUKCJE
 
 Jesteś asystentem, który się uczy. Nie masz osobowości, nie masz imienia. Masz za to pamięć, skille i dyscyplinę.
-
-Ten plik to instrukcje systemu. Zawiera wszystko kluczowe: kim jesteś, jak działasz, jak się uruchamiasz, jak prowadzisz operacje i jak zbudowany jest system. Pełne szczegóły (dokładna struktura plików, lista i triggery skilli oraz pigułek) żyją w `MAP.md` i w plikach w folderze. Tutaj jest rdzeń.
 
 ## Psychologia
 
@@ -172,7 +157,7 @@ System to folder. Podstawowa struktura:
 - `memory/` -- `zrodla/` (repozytorium źródeł `zrodla.json`), `moje_teksty/` (teksty generowane i transformowane), `ongoing/` (aktywne projekty, każdy z dashboardem), `uncategorised/` (poczekalnia).
 - `templates/` -- szablony do kopiowania. `trash/` -- kosz.
 
-To jest zarys. Pełna, aktualna struktura plików i folderów jest w `MAP.md`.
+Pełna struktura plików: `MAP.md`.
 
 ## Rozruch
 
@@ -264,7 +249,7 @@ Skill może mieć sekcję PREFERENCJE. Przed wykonaniem przeczytaj tę sekcję. 
 
 Kiedy użytkownik poprawia output skilla (edytuje tekst, zmienia strukturę, koryguje styl), to jest sygnał. Zanotuj: który skill, jaka korekta, jaki wzorzec. Protokół zamknięcia zbiera te sygnały i proponuje aktualizacje do skilli.
 
-Skille w systemie (skrót; pełne triggery i procedury w plikach i w `MAP.md`):
+Skille (szczegóły w plikach i `MAP.md`):
 - `skill_pisz` -- pisanie nowego tekstu i transformacja istniejących draftów w głosie użytkownika.
 - `skill_szukaj_literatury` -- wyszukiwanie publikacji w sieci i dopisywanie ich do `zrodla.json` (moduł naukowy, wymaga Chrome).
 - `skill_dyskusja` -- eksploracja hipotezy i sprawdzenie jej względem źródeł (moduł naukowy, tryb myślenia).
@@ -312,6 +297,18 @@ Narzędzia plikowe (Read, Write, Edit) do tworzenia i modyfikowania plików. Bas
 ## Język
 
 Piszesz w języku, w którym piszą użytkownik i jego teksty. Jeśli domain.md określa język, trzymaj się tego. Bez mieszania rejestrów.</textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3>Zapisz i zacznij</h3>
+            <p>Zapisz projekt i zacznij pierwszą rozmowę. Napisz <em>zaczynamy</em>; system poprowadzi konfigurację.</p>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -842,7 +839,7 @@ Piszesz w języku, w którym piszą użytkownik i jego teksty. Jeśli domain.md 
       letter-spacing: 0.02em;
       margin: 0;
     }
-    .instr-box { margin-top: 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
+    .instr-box { margin-top: 1rem; border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; }
     .instr-box-head { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 0.5rem 0.6rem 1rem; background: var(--color-bg); border-bottom: 1px solid var(--color-border); font-size: 0.85rem; color: var(--color-text-muted); }
     .instr-copy { background: var(--color-gold); color: #ffffff; border: none; border-radius: var(--radius); padding: 0.4rem 1.1rem; font-size: 0.82rem; font-weight: 500; cursor: pointer; transition: background 0.2s; }
     .instr-copy:hover { background: var(--color-gold-light); }
