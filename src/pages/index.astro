@@ -63,7 +63,16 @@ import '../styles/global.css';
 
     const existingSlug = getCompanySlug();
     if (existingSlug) {
-      window.location.href = `/${existingSlug}/`;
+      // Do not auto-redirect: that traps the logo (home -> bounce back to company, password unreachable).
+      // Offer a way back to materials and keep the password form usable for switching.
+      const landing = document.querySelector('.landing');
+      if (landing) {
+        const back = document.createElement('a');
+        back.href = `/${existingSlug}/`;
+        back.className = 'back-to-materials';
+        back.textContent = `Wróć do materiałów (${existingSlug}) →`;
+        landing.appendChild(back);
+      }
     }
 
     const form = document.getElementById('login-form');
@@ -196,6 +205,15 @@ import '../styles/global.css';
       color: #b84444;
       min-height: 1.2em;
     }
+
+    .back-to-materials {
+      font-size: 0.85rem;
+      color: var(--color-gold);
+      text-decoration: none;
+      border-bottom: 1px solid var(--color-gold-dim);
+      padding-bottom: 0.1rem;
+    }
+    .back-to-materials:hover { color: var(--color-gold-light); }
   </style>
 </body>
 </html>
