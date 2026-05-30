@@ -153,6 +153,11 @@ import '../../styles/global.css';
         <div class="chat-msg ai">Dziś: wstęp (dwie wersje, finalna zaakceptowana) + akapit metodologiczny. Zapamiętane: otwierać akapit od problemu [×2]. Dashboard zaktualizowany. Do następnej.</div>
       </div>
 
+      <div class="session-stages-intro">
+        <h3>Każda sesja powinna składać się z trzech etapów.</h3>
+        <p class="subhead">jedno zadanie = jedna sesja</p>
+      </div>
+
       <div class="session-why">
         <p><strong>Otwarcie</strong> (powiedz <code>zaczynamy</code>) aktywuje kontekst: system wie jaka dziedzina, jaki rejestr i jakie Twoje preferencje z poprzednich sesji. Każda sesja zaczyna się z pełną wiedzą o tym, jak piszesz.</p>
         <p><strong>Korekty w trakcie</strong> trafiają do profilu z wagą. Im częściej coś zmieniasz, tym silniejsza reguła. Z każdą sesją system zbliża się do Twojego głosu.</p>
@@ -625,6 +630,22 @@ import '../../styles/global.css';
     .cmd-list { margin: 0; }
     .cmd-list dt { margin-top: 0.7rem; }
     .cmd-list dd { margin: 0.15rem 0 0 0; font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.55; }
+
+    .session-stages-intro { margin-top: 3.5rem; }
+    .session-stages-intro h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.6vw, 1.7rem);
+      font-weight: 400;
+      color: var(--color-gold);
+      line-height: 1.3;
+      margin-bottom: 0.4rem;
+    }
+    .session-stages-intro .subhead {
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
   </style>
 
 </body>
