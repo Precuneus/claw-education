@@ -170,31 +170,21 @@ import '../../styles/global.css';
       <h2>Komendy</h2>
       <p>WrAIdesk rozumie naturalny język. Kilka komend steruje systemem wprost.</p>
 
-      <div class="cmd-group">
-        <h3>Sesja</h3>
-        <dl class="cmd-list">
-          <dt><code>zaczynamy</code></dt><dd>rozpoczęcie sesji pracy z systemem</dd>
-          <dt><code>zamykamy</code></dt><dd>zakończenie sesji: system zapisuje stan i uczy się z Twoich poprawek</dd>
-          <dt><code>pomoc</code></dt><dd>wrAIdesk wypisuje dostępne komendy i możliwości</dd>
-        </dl>
-      </div>
-
-      <div class="cmd-group">
-        <h3>Konfiguracja (raz na początku)</h3>
-        <dl class="cmd-list">
-          <dt><code>uruchom pill_onboarding</code></dt><dd>pierwsza rozmowa konfiguracyjna: dziedzina, odbiorcy, styl</dd>
-          <dt><code>uruchom pill_kalibracja</code></dt><dd>dostarczenie próbki Twojego głosu (2-3 teksty)</dd>
-        </dl>
-      </div>
-
-      <div class="cmd-group">
-        <h3>Praca</h3>
-        <dl class="cmd-list">
-          <dt><code>napisz... / przepisz... / skróć / rozwiń</code></dt><dd>pisanie i przekształcanie tekstu w Twoim głosie</dd>
-          <dt><code>znajdź literaturę o...</code></dt><dd>wyszukiwanie źródeł i dopisywanie ich do repozytorium (moduł naukowy)</dd>
-          <dt><code>przedyskutujmy... / rozważ hipotezę</code></dt><dd>eksploracja tezy i sprawdzenie jej w źródłach (moduł naukowy)</dd>
-        </dl>
-      </div>
+      <table class="cmd-table">
+        <tbody>
+          <tr class="cmd-cat"><th colspan="2">Sesja</th></tr>
+          <tr><td><code>zaczynamy</code></td><td>rozpoczęcie sesji pracy z systemem</td></tr>
+          <tr><td><code>zamykamy</code></td><td>zakończenie sesji: system zapisuje stan i uczy się z Twoich poprawek</td></tr>
+          <tr><td><code>pomoc</code></td><td>wrAIdesk wypisuje dostępne komendy i możliwości</td></tr>
+          <tr class="cmd-cat"><th colspan="2">Konfiguracja (raz na początku)</th></tr>
+          <tr><td><code>uruchom pill_onboarding</code></td><td>pierwsza rozmowa konfiguracyjna: dziedzina, odbiorcy, styl</td></tr>
+          <tr><td><code>uruchom pill_kalibracja</code></td><td>dostarczenie próbki Twojego głosu (2-3 teksty)</td></tr>
+          <tr class="cmd-cat"><th colspan="2">Praca</th></tr>
+          <tr><td><code>napisz... / przepisz... / skróć / rozwiń</code></td><td>pisanie i przekształcanie tekstu w Twoim głosie</td></tr>
+          <tr><td><code>znajdź literaturę o...</code></td><td>wyszukiwanie źródeł i dopisywanie ich do repozytorium (moduł naukowy)</td></tr>
+          <tr><td><code>przedyskutujmy... / rozważ hipotezę</code></td><td>eksploracja tezy i sprawdzenie jej w źródłach (moduł naukowy)</td></tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- Download CTA -->
@@ -293,13 +283,13 @@ import '../../styles/global.css';
       width: 100%;
       max-width: 760px;
       margin: 0 auto;
-      padding: 5rem 2rem;
+      padding: 2.5rem 2rem;
     }
 
     .section.alt {
       background: var(--color-surface);
       max-width: 100%;
-      padding: 5rem 2rem;
+      padding: 2.5rem 2rem;
     }
 
     .section.alt > * {
@@ -625,12 +615,20 @@ import '../../styles/global.css';
       text-decoration: none;
     }
 
-    #komendy { padding-top: 0; }
-    .cmd-group { margin-top: 2rem; }
-    .cmd-group h3 { font-size: 0.95rem; font-weight: 500; color: var(--color-text); margin-bottom: 0.6rem; }
-    .cmd-list { margin: 0; }
-    .cmd-list dt { margin-top: 0.7rem; }
-    .cmd-list dd { margin: 0.15rem 0 0 0; font-size: 0.9rem; color: var(--color-text-muted); line-height: 1.55; }
+    .cmd-table { width: 100%; border-collapse: collapse; margin-top: 2rem; font-size: 0.9rem; }
+    .cmd-table td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--color-border); vertical-align: top; line-height: 1.5; }
+    .cmd-table td:first-child { width: 38%; }
+    .cmd-table td:last-child { color: var(--color-text-muted); }
+    .cmd-table tr.cmd-cat th {
+      text-align: left;
+      padding: 1.1rem 0.75rem 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      border-bottom: 1px solid var(--color-border);
+    }
 
     .session-stages-intro { margin-top: 3.5rem; }
     .session-stages-intro h3 {
